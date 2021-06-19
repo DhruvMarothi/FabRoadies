@@ -1,0 +1,119 @@
+<!--@author Sanchari-->
+<!--@Payment Page-->
+
+<!-- navbar part-->
+<!--
+<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
+    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
+        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto offset-md-4">
+            <li class="nav-item active">
+                <a class="nav-link" href="#aboutUs"><b>About Us</b></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <b>Manage Bookings</b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#"><b>My Tickets</b></a></li>
+                    <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>
+                    <li><a class="dropdown-item" href="#"><b>Cancel Trip</b></a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bus-routes"><b>Top Bus Routes</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#feedback-form"><b>Contact Us</b></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <b>User Profile</b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" routerLink='/user-update'><b>Update Profile</b></a></li>
+                    <li><a class="dropdown-item" (click)="logout()"><b>Logout</b></a></li>
+                </ul>
+            </li>            
+        </ul>
+    </div>
+</nav>  -->
+
+<!--Background-->
+<div style="height:200px">
+
+</div>
+
+<div class="bg" style="background-image: url(/assets/Images/4.png);">
+
+    <!--Payment Part-->
+    <div class="main container-fluid">
+        <div class="heading my-4">
+            <h2 class="fs-2"><b>Payment Method</b></h2>
+        </div>
+        <div class="login">
+            <div class="row">
+                <div class="col-5">
+                    <div class="container my-4">
+                        <div class="card">
+                            <img src="assets/Images/3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                &nbsp;
+                                <h5 class="card-title">Registered users get MORE!</h5>
+                                &nbsp;
+                                <ul class="list-group list-group-numbered card-text">
+                                    <li class="list-group-item">View/ Cancel Bookings</li>
+                                    <li class="list-group-item">Manage cancellations & print eTickets</li>
+                                    <li class="list-group-item">Book faster with Forms</li>
+                                    <li class="list-group-item">Book from the selection of buses, including AC, Non-AC, Deluxe and more.</li>
+                                    <li class="list-group-item">Pay through cards, Net banking or mobile wallets for Bus reservation</li>
+                                    <li class="list-group-item">We have tied up with best bus operators in India to make travel easy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-7">
+                    <form (ngSubmit) = "onPayment()" #frm = ngForm>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>Card No.</b></label>
+                            <input name ="cardno" [(ngModel)]="user.cardNumber" type="number" class="form-control rounded-pill border border-3 border-danger"
+                             placeholder="Enter card no." #ucard=ngModel required pattern="[0-9]{10}">
+                             <div *ngIf="ucard.invalid && ucard.dirty" class="alert alert-warning" role="alert">
+                                 Enter valid card number
+                             </div>
+                        </div>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>Name of cardholder</b></label>
+                            <input name ="name" [(ngModel)]="user.name" type="text" class="form-control rounded-pill border border-3 border-danger"
+                            placeholder="Your Full Name" #uname=ngModel required pattern="[A-Za-z]*{5,15}">
+                        </div>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>CCV No</b></label>
+                            <input name ="ccv" [(ngModel)]="user.ccvNumber" type="number" class="form-control rounded-pill border border-3 border-danger" 
+                            #ccv=ngModel required>
+                        </div>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>Expiry Date</b></label>
+                            <input name ="date" [(ngModel)]="user.expiryDate" type="date" class="form-control rounded-pill border border-3 border-danger"
+                            #exp=ngModel required>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="submit" [disabled]=!frm.valid class="btn btn-danger btn-lg">Proceed To Pay</button>
+                        </div>
+                        <p class="fs-5"><img src="assets/Images/5.png"></p>  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

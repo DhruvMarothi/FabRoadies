@@ -146,16 +146,17 @@
             </div>
 
             <ng-template #template>                  <!--Modal Template-->
-              <div class="modal-xl modal-body">
+              <div id="hs" class="modal-xl modal-body" >
                   <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
                       <span aria-hidden="true">&times;</span>
                   </button>
-                <app-enter-passenger-details (closeModal)="closeModal()"></app-enter-passenger-details>       <!--Enter-details component linked inside modal-->
+                <app-enter-passenger-details (closeModal)="closeModal()" ></app-enter-passenger-details>       <!--Enter-details component linked inside modal-->
               </div>
             </ng-template>
 
             <div class="row ">
-              <button (click)="openModal(template)" class="btn mt-3 ml-3 btn-primary btn-sm btn-block ">Confirm</button>
+              <button  id="confirm" (click)="openModal(template)"class=" btn mt-3 ml-3 btn-primary btn-sm btn-block">Confirm</button>
+          
             </div>
           </div>
         </div>

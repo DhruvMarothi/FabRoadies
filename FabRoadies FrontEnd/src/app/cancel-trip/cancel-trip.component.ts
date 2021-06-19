@@ -17,7 +17,7 @@ export class CancelTripComponent implements OnInit {
   cancel()
   {
     this.service.cancelTrip(this.tid);
-    this.router.navigate(['home'])
+    //this.router.navigate(['home'])
   }
 
 }

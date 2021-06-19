@@ -61,6 +61,8 @@ export class EnterPassengerDetailsComponent implements OnInit {
 
   save1(){
     // alert(this.service.uid);
+    this.router.navigate(['login']);
+    
     var t= localStorage.getItem('user');
     
     if(t!=null)

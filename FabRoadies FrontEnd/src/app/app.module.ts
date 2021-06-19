@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { ModalModule } from 'node_modules/ngx-bootstrap/modal';
 
+
 import { AppComponent } from './app.component';
 import { BrowseComponent } from './browse/browse.component';
 import { LoginComponent } from './login/login.component';
@@ -59,6 +60,7 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     BrowserAnimationsModule,
     MatButtonModule,
     ModalModule.forRoot()
+
     // MatButtonModule
   ],
 

@@ -1,8 +1,74 @@
-<div style="height:100px"></div>
+<!--<div style="height:100px"></div>
+
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Ticket No</label>
     <input type="text" class="form-control" id="ticket" placeholder="TICKET NO" [(ngModel)]="tid">
   </div>
+  <
   <div class="mb-3">
     <button type="button" class="btn btn-success" (click)="cancel()">Cancel Ticket</button>
+  </div>  -->  
+  <div class="container my-4" style="padding-top: 120px;">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Ticket No</label>
+        <input type="text" class="form-control" id="ticket" placeholder="TICKET NO" [(ngModel)]="tid">
+    </div>
+    <br>
+    <br>
+    <div class="mb-3 text-center btn-group" role="group">
+        <button type="button">
+            <a href="#myModal" class="btn btn-danger btn-lg" data-toggle="modal">Cancle Ticket</a>
+        </button>
+    </div>
   </div>
+  
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box">
+                    <i class="material-icons">&#xE5CD;</i>
+                </div>
+                <h4 class="modal-title w-100">Are you sure?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete these records?</p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <div class="mb-3 text-center btn-group" role="group">
+                  <button type="button">
+                      <a href="#myModal1" class="btn btn-danger btn-lg" data-toggle="modal"  (click)="cancel()">Delete</a>
+                  </button>
+              </div>
+  
+
+              <!-- Modal HTML -->
+              <div id="myModal1" class="modal fade">
+                  <div class="modal-dialog modal-confirm">
+                      <div class="modal-content">
+                          <div class="modal-header justify-content-center">
+                              <div class="icon-box">
+                                  <i class="material-icons">&#xE876;</i>
+                              </div>
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          </div>
+                          <div class="modal-body text-center">
+                              <h4>successfull!</h4>
+                              <br>
+                              <br>
+                              <p>Your trip has been cancelled successfully. Your money will be refunded within 7 days.</p>
+                              <button class="btn btn-success" data-dismiss="modal" routerLink="/home">Home</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
