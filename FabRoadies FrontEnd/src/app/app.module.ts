@@ -26,7 +26,7 @@ import { CancelTripComponent } from './cancel-trip/cancel-trip.component';
 import { EnterPassengerDetailsComponent } from './enter-passenger-details/enter-passenger-details.component';
 import { SelectSeatComponent } from './select-seat/select-seat.component';
 import { PassengerListComponent } from './passenger-list/passenger-list.component';
-
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +47,7 @@ import { PassengerListComponent } from './passenger-list/passenger-list.componen
     SelectSeatComponent,
     EnterPassengerDetailsComponent,
     PassengerListComponent,
+    UserUpdateComponent,
  
   ],
 

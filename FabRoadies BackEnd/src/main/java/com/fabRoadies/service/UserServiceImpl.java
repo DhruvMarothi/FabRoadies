@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
 		Roles rolls =getRoll(roll);
 		user.setRoll(rolls);
 	    repo.save(user);
-		
-		}
+	}
+	
 	public Roles getRoll(int roll)
 	{
 		return rollrepo.findById(roll).get();
@@ -59,6 +59,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void updateUser(User user) {
 		if(repo.getById(user.getId())!=null) {
+			Roles rolls = new Roles();
+			rolls.setRollid(2);
+			rolls.setUsertype("User");
+			user.setRoll(rolls);
 			repo.save(user);
 		}
 		else {

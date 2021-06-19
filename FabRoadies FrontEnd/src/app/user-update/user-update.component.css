@@ -1,0 +1,77 @@
+#bus-icon {
+    height: 75px;
+    width: 69px;
+    border: 3px dotted darkgreen;
+    border-radius: 50%;
+}
+
+.bg{
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-size: 48rem;
+}
+
+.login{
+    padding-top:23px;
+}
+
+.card{
+    width:10rem;
+}
+
+.icon{
+    background-position: 1px;
+    display: inline-block;
+    height: 21px;
+    width: 9%;
+    float: left;
+    color: #f76b38;
+    background: url(/assets/Images/resched.png);
+}
+.heading{
+    text-align: center;
+    padding-top: 80px;
+    font-size:medium;
+}
+
+
+.ques{
+    padding: 40px;
+    text-align: end;
+    padding-top: 30px;
+    margin: 25px;
+    margin-left: auto;
+    font-size: 160%;
+}
+
+.button{
+    padding-top: 35px;
+}
+
+.form-label{
+    font-size: larger;
+    margin: 10px;
+    padding: 0.2px;
+}
+
+/*.card{
+    width:22rem;
+}*/
+
+.card-title{
+    text-align: center;
+}
+
+.btn-group{
+    margin:20px;
+}
+
+.foot-icon{
+    height: 9%;
+    width: 5%;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}

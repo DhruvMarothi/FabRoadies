@@ -60,6 +60,13 @@ export class AdminService {
     this.http.put(this.baseUrl + "/bus/edit", addBus).subscribe();
   }
   
+  updateUser(user:User)
+  {
+    console.log(user)
+    this.http.put(this.baseUrl + "/user/update", user).subscribe();
+
+  }
+  
   addUser(user: User) {
     this.http.post(this.baseUrl + "/add/2", user).subscribe();
   }

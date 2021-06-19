@@ -20,7 +20,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <!-- <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>  -->
-                    <li ><a [attr.disabled]=!log class="dropdown-item"  routerLink="/cancletrip"><b>Cancel Trip</b></a></li>
+                    <li ><button [disabled]=!log class="dropdown-item"  routerLink="/cancletrip"><b>Cancel Trip</b></button></li>
                 </ul>
             </li>
             <li class="nav-item">
@@ -40,12 +40,10 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li><a [hidden]=log class="dropdown-item"routerLink='/login' ><b>Login</b></a></li>
+                    <li><a [hidden]=log class="dropdown-item"routerLink='/signup' ><b>Sign Up</b></a></li>
                     <li><a [hidden]=!log class="dropdown-item" routerLink='/user-update'><b>Edit Profile</b></a></li>
                     <li><a [hidden]=!log class="dropdown-item" routerLink='/mytrip'><b>My Trips</b></a></li>
                     <li><a [hidden]=!log class="dropdown-item" (click)="logout()" ><b>Logout</b></a></li>
-                   
-
-
                 </ul>
             </li>         
         </ul>
