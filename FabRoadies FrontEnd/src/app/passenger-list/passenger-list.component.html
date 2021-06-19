@@ -1,0 +1,21 @@
+<!--Passenger List UI-->
+<div class="container-fluid my-2">
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Seat Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of passenger, let i=index">
+                <th scope="row">{{p.seatno}}</th>
+                <td>{{p.name}}</td>
+                <td>{{p.gender}}</td>
+                <td>{{p.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

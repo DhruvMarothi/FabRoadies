@@ -1,0 +1,165 @@
+<!--@Author Jaspreet-->
+<!--Version 1.0 -->
+<div class="container-fluid pt-5 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-9 ">
+      <div class="seat_plan_wrap">
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="ss"><b>Select Seat to Proceed</b></h4>
+            <div class="seats">
+              <div class="handle">
+                <img src="/assets/handle.png">
+              </div>
+              <div class="row1">
+                <ul>
+                  <li>
+                    <a (click)="changePic('A1', this)" title="[A1]">
+                      <img src="/assets/normalSeat1.png" id="A1">
+                    </a>           
+                  </li>
+                  <li>
+                    <a (click)="changePic('B1')" title="[B1]">
+                      <img src="/assets/normalSeat1.png" id = "B1">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[C1]" (click)="changePic('C1')">
+                      <img src="/assets/normalSeat1.png" id="C1">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[D1]" (click)="changePic('D1')">
+                      <img src="/assets/normalSeat1.png"  id="D1">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[E1]" (click)="changePic('E1')">
+                      <img src="/assets/normalSeat1.png"  id="E1">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[F1]" (click)="changePic('F1')">
+                      <img src="/assets/reservedSeat.png"  id="F1">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="row1">
+
+                <ul>
+                  <!-- ROW 2 START -->
+                  <li>
+                    <a title="[A2]" (click)="changePic('A2')">
+                      <img src="/assets/normalSeat1.png"  id="A2">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[B2]" (click)="changePic('B2')">
+                      <img src="/assets/normalSeat1.png"  id="B2">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[C2]" (click)="changePic('C2')">
+                      <img src="/assets/normalSeat1.png"  id="C2">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[D2]" (click)="changePicR('D2')">
+                      <img src="/assets/reservedSeat.png"  id="D2">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[E2]" (click)="changePic('E2')">
+                      <img src="/assets/normalSeat1.png"  id="E2">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[F2]" (click)="changePic('F2')">
+                      <img src="/assets/normalSeat1.png"  id="F2">
+                    </a>
+                  </li>
+                </ul>
+
+                <!-- ROW 2 COMPLETE  -->
+
+                <ul>
+                  <!-- ROW 3 START  -->
+                  <li>
+                    <a title="[A3]" (click)="changePic('A3')">
+                      <img src="/assets/normalSeat1.png"  id="A3">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[B3]" (click)="changePic('B3')">
+                      <img src="/assets/normalSeat1.png"  id="B3">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[C3]" (click)="changePic('C3')">
+                      <img src="/assets/normalSeat1.png"  id="C3">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[D3]" (click)="changePic('D3')" >
+                      <img src="/assets/normalSeat1.png" id="D3">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[E3]" (click)="changePic('E3')" >
+                      <img src="/assets/normalSeat1.png" id="E3">
+                    </a>
+                  </li>
+                  <li>
+                    <a title="[F3]" (click)="changePic('F3')" >
+                      <img src="/assets/normalSeat1.png" id="F3">
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+             
+            </div>
+
+            <div *ngIf="alert"class="alert alert-danger" id="ss">You can book only 6 seats at one time </div>
+          </div>
+          
+          <div class="col-md-6 ">
+          <div class="seat_plan">
+            <table class="table " id="T">
+              <thead class="ss">
+                <tr>
+                  <th>Seats</th>
+                  <th>Fare</th>
+                </tr>
+              </thead>
+              <tbody class="ss">
+                <tr  *ngFor="let s of seatList">
+                    <td> {{s.seatno}} </td>
+                    <td> {{s.price}} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            <div class="total  bg-default" id="ss">
+                <b> Total : {{total}} </b>                        <!--<b>Total: {{total}}</b>-->
+            </div>
+
+            <ng-template #template>                  <!--Modal Template-->
+              <div class="modal-xl modal-body">
+                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                <app-enter-passenger-details (closeModal)="closeModal()"></app-enter-passenger-details>       <!--Enter-details component linked inside modal-->
+              </div>
+            </ng-template>
+
+            <div class="row ">
+              <button (click)="openModal(template)" class="btn mt-3 ml-3 btn-primary btn-sm btn-block ">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>

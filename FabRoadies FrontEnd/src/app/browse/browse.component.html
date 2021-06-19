@@ -1,0 +1,191 @@
+
+
+
+<!-- background, location set and search part -->
+<div class="container-fluid" id="first-backgrnd">
+    <div id="tag-line">Experience Travel like Never Before!</div>
+    <div class="row location-bar">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="From" aria-label="From" id="from-location"  [(ngModel)]="busq.source">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="To" aria-label="To" id="to-location" [(ngModel)]="busq.destination">
+        </div>
+        <div class="col">
+            <input type="date" min={{date}} class="form-control" aria-label="Date" id="date" [(ngModel)]="busq.dateOfDeparture"> 
+        </div>
+        <div class="col">
+            <button id="search-btn" type="submit" class="btn btn-info btn-rounded" (click)="searchBusBysdd(busq)">Search Buses</button>
+        </div>
+    </div>
+</div>
+<!--About Us part-->
+<div class="container-fluid my-4" id="aboutUs">
+    <h2 class="my-4 py-3">About Us</h2>
+    <p class="mx-3">
+        <img src="/assets/icon01.jpg" alt="">
+        Fab Roadies is a budding brand in Bus booking which aims to give you an experience worth remembering. We
+        believe in the fact that while on vacations or trips or journeys, the time you spend on road is the most
+        important one as It affects our moods and we make most of our priceless memories on roads itself. Thus, We
+        are committed on a mission to make every Indian's road journey a spellbound experience.
+
+        We hope you would have loved travelling with us, and we are open to all kinds of worthy feedbacks and/ or
+        suggestions you might have for us, Tell us !!!
+        (Feedback Form Link)
+    </p>
+</div>
+
+<!--Booking Procedure part-->
+<div class="container-fluid booking-process">
+    <h2 class="text-center py-3">Booking Process</h2>
+    <p class="text-center">Book your Bus in just 4 easy steps</p>
+    <div class="row my-4">
+        <div class="col">
+            <img class="booking-icons" src="/assets/search-icon-img.png" alt="">
+            <p id="icon-para">Search</p>
+        </div>
+        <div class="col">
+            <img class="booking-icons" src="/assets/bus-icon-img03.png" alt="">
+            <p id="icon-para">Select your Bus</p>
+        </div>
+        <div class="col">
+            <img class="booking-icons" src="/assets/booking-icon-img02.png" alt="">
+            <p id="icon-para">Book</p>
+        </div>
+        <div class="col">
+            <img class="booking-icons" src="/assets/pay-icon-img.jpg" alt="">
+            <p id="icon-para">Pay and Travel!</p>
+        </div>
+    </div>
+</div>
+
+<!--Destination part-->
+<div class="container-fluid bus-route my-4" id="bus-routes">
+    <h2 class="text-center py-3">Top Bus Routes</h2>
+    <div class="row destination-row">
+        <div class="col-4 col-lg-4 col-sm-1">
+            <div class="card mx-bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/bangalore-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Bangalore</p>
+                    <ul>
+                        <li>Bangalore to Pune</li>
+                        <li>Bangalore to Hyderabad</li>
+                        <li>Bangalore to Mumbai</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class=" col-4 col-lg-4 col-sm-1">
+            <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/chennai-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Chennai</p>
+                    <ul>
+                        <li>Chennai to Pune</li>
+                        <li>Chennai to Bangalore</li>
+                        <li>Chennai to Madurai</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-lg-4 col-sm-1">
+            <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/pune-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Pune</p>
+                    <ul>
+                        <li>Pune to Hyderabad</li>
+                        <li>Pune to Bangalore</li>
+                        <li>Pune to Mumbai</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 col-lg-4 col-sm-1">
+            <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/mumbai-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Mumbai</p>
+                    <ul>
+                        <li>Mumbai to Pune</li>
+                        <li>Mumbai to Bangalore</li>
+                        <li>Mumbai to Delhi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-lg-4 col-sm-1">
+            <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/kolkata-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Kolkata</p>
+                    <ul>
+                        <li>Kolkata to Delhi</li>
+                        <li>Kolkata to Jamshedpur</li>
+                        <li>Kolkata to Orissa</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-lg-4 col-sm-1">
+            <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
+                <img src="/assets/delhi-img.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Delhi</p>
+                    <ul>
+                        <li>Delhi to Agra</li>
+                        <li>Delhi to Noida</li>
+                        <li>Delhi to Chattisgarh</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Feedback Form-->
+<div class="container-fluid my-4" id="feedback-form">
+    <form (ngSubmit)="feedback()" #frm=ngForm>
+        <div class="row">
+            <div class="col-lg-5 col-md-4">
+                <div class="mb-3">
+                    <label class="form-label">Name: </label>
+                    <input name="name" [(ngModel)]="user.name" type="text" class="form-control" required
+                        placeholder="Your Name" #uname=ngModel pattern="[A-Za-z]{3,}">
+                        <div *ngIf="uname.invalid && uname.dirty" class="alert alert-warning" role="alert">
+                            Please fill your Name!
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email address: </label>
+                    <input name="email" [(ngModel)]="user.email" type="email" class="form-control"
+                        placeholder="name@example.com" required #umail=ngModel>
+                        <div *ngIf="umail.invalid && umail.dirty" class="alert alert-warning" role="alert">
+                            Invalid Email!
+                        </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone Number: </label>
+                    <input name="phnNo" [(ngModel)]="user.phoneNumber" type="number" class="form-control"
+                        placeholder="(+91) 1234567890" #uphn=ngModel>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <div class="mb-3">
+                    <label class="form-label">Suggestions/Feedback :</label>
+                    <textarea name="feedBack" [(ngModel)]="feedBack" class="form-control"
+                        placeholder="Write your suggestions/feedbacks here" rows="8" required
+                        #fback=ngModel></textarea>
+                        <div *ngIf="fback.invalid&&fback.dirty" class="alert alert-warning" role="alert">
+                            Please write something!
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-info" [disabled]=!frm.valid>Submit</button>
+    </form>
+</div>

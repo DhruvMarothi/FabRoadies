@@ -1,0 +1,59 @@
+<!--@author Jaspreet-->
+<!--@Version 1.0-->
+<!--@No Buses Found Page-->
+<!--Search for a different Bus Route button to be linked with Browse page-->
+
+<!-- navbar part -->
+<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
+    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
+        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto offset-md-4">
+            <li class="nav-item active">
+                <a class="nav-link" href="#aboutUs">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Manage Bookings
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Change Date</a></li>
+                    <li><a class="dropdown-item" href="#">Cancel Trip</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bus-routes">Top Bus Routes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#feedback-form">Contact Us</a>
+            </li>
+            <button type="submit" class="btn btn-success" id="login-btn" routerLink='/login'>Login</button>
+            <button type="submit" class="btn btn-success" id="signUp-btn" routerLink='/signup'>Sign Up</button>
+        </ul>
+    </div>
+</nav>
+
+<!--No Bus Page Logic-->
+<div class="noBusContainer">
+    <div class="t-center" id="image">
+        <!--Image kept in assets folder-->
+        <img src="/assets/no-bus.png">
+    </div>
+    <div class="t-center">
+        <p><b>Oops!! No Buses Found!!!</b></p>
+        <p> No Routes Available </p>
+    </div>
+    <hr>
+
+    <div style="margin: 20px;" class="t-center">
+        <button mat-raised-button color="accent" routerLink='/home'>
+            Search for a different Bus Route
+        </button>
+    </div>
+</div>

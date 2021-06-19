@@ -1,0 +1,24 @@
+.ticketbooking{
+    padding-top: 100px;
+}
+
+.MLine{
+    font-family: cursive;
+    font-size: 15px;
+    color: green;
+    /*background-color: aquamarine; */
+}
+
+.text-capitalize{
+    background-color: bisque;
+
+}
+
+#Title{
+    color: cornsilk;
+    background-color: rgb(99, 87, 177);
+}
+
+.row mb-3 card card-body {
+    border-radius: .30rem;
+}

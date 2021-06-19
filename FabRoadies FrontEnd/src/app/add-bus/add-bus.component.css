@@ -1,0 +1,13 @@
+.card{
+    align-content: center;
+    margin-left: 20px;
+    margin-top: 110px;
+}
+
+.card-fluid{
+    padding: 20px;
+    background-color: rgba(0, 255, 136, 0.144);
+}
+.card-text{
+    padding-top: 20px;
+}

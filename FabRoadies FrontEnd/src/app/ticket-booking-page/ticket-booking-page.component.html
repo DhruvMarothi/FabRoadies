@@ -1,0 +1,121 @@
+<!--@Author: Jaspreet-->
+<!--@Version 1.0-->
+<!--Page to be loaded with filtered search results of buses-->
+<!--To Do - link view seats button to gui to bus seats-->
+
+<!-- navbar part -->
+<!--
+<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
+    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
+        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto offset-md-4">
+            <li class="nav-item active">
+                <a class="nav-link" href="#aboutUs">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Manage Bookings
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Change Date</a></li>
+                    <li><a class="dropdown-item" href="#">Cancel Trip</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bus-routes">Top Bus Routes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#feedback-form">Contact Us</a>
+            </li>
+            <button type="submit" class="btn btn-success" id="login-btn" routerLink='/login'>Login</button>
+            <button type="submit" class="btn btn-success" id="signUp-btn" routerLink='/signup'>Sign Up</button>
+        </ul>
+    </div>
+</nav>
+-->
+
+<div style="height:10px"></div>
+<!--Main ticket booking logic-->
+<div class="ticketbooking">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                    <div class="row text-center">
+                        <h1 class=" text-capitalize col-md-12 mb-3 text-center">Available buses are</h1>
+                    </div>
+                    <hr>
+                    <p class="MLine"> All Buses include Safety as a Major Factor!!</p>
+                <div class="row mb-3 card card-body" id="Title"> <!--Headings Bar - Single Row-->
+                    <div class="row">
+                        <div class="col-md-3 text-right"> <!--Heading Agency-->
+                            <p> Bus Agency</p>
+                        </div>
+                        <div class="col-md-3 text-right"> <!--Heading Depart-->
+                            <p> Departure </p>
+                        </div>
+                        <div class="col-md-3 text-right"> <!--Heading Arrival-->
+                            <p> Arrival </p>
+                        </div>
+                        <div class="col-md-2 text-right"> <!--Heading Fare-->
+                            <p> Fare </p>
+                        </div>
+                        <div class="col-md-1 text-right"> <!--Heading Seats-->
+                            <p> Seats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 card card-body" *ngFor="let b of buses">           <!--opening div for single card body *ngFor="let b of buses" to be added-->  
+                    <div class=" row">                          <!--Row1 Card 1-->
+                        <div class="col-md-3 text-right">
+                            <p><b>{{b.agency}}</b></p>        <!--Agency {{b.agency}}-->
+                        </div>
+                        <div class="col-md-3">
+                            <p><b>{{b.departuretime}} </b></p>               <!--Departure Time {{b.departuretime}} -->
+                        </div>
+                        <div class="col-md-3">
+                            <p> 04 : 56 </p>                    <!--Arrival Time {{b.arrivaltime}} Not defined in backend yet--> 
+                        </div>
+                        <div class="col-md-2">
+                            <p><b>{{b.price}}</b></p>                 <!--Price {{b.price}}-->
+                        </div>
+                        <div class="col-md-1">
+                            <p>{{b.seats}}</p>                          <!--Seats {{b.seats}}-->
+                        </div>
+                    </div>
+                    <div class="row">                           <!--Row 2 Card 1-->
+                        <div class="col-md-3 text-right">
+                            <p>  {{b.busType}}</p>                 <!--Bustype {{b.busType}}-->
+                        </div>
+                        <div class="col-md-3">
+                            <p>{{b.departureCity}}</p>             <!--Departure City {{b.departureCity}}-->
+                        </div>
+                        <div class="col-md-3">
+                            <p> {{b.arrivalCity}} </p>                <!--Arrival City  {{b.Arrival}}-->
+                        </div>
+                        <div class="col-md-1"></div>
+                        <ng-template #template>                  <!--Seats Template-->
+                            <div class="modal-xl modal-body">
+                                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                              <app-select-seat (closeModal)="closeModal()" ></app-select-seat>       <!--Select seat component linked inside modal-->
+                            </div>
+                        </ng-template>
+                        <div class="col-md-2 text-right">       <!--View Seats Button-->
+                            <button mat-flat-button style="width: 10em;" color="accent" (click)="saveBus(b)" (click)="openModal(template)"  class="btn btn-danger btn-sm">
+                                <p> View Seats</p>
+                            </button>
+                        </div>
+                    </div>
+                </div> <!--Closing div for single card body-->
+            </div> 
+        </div>
+    </div>
+</div>

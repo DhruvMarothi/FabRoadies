@@ -1,0 +1,92 @@
+<!--@author Sanchari-->
+<!--@User Login Page-->
+
+<!-- navbar part -->
+<!--
+<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
+    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
+        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto offset-md-4">
+            <li class="nav-item active">
+                <a class="nav-link" href="#aboutUs"><b>About Us</b></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <b>Manage Bookings</b>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>
+                    <li><a class="dropdown-item" href="#"><b>Cancel Trip</b></a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#bus-routes"><b>Top Bus Routes</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#feedback-form"><b>Contact Us</b></a>
+            </li>
+            <button type="submit" class="btn btn-success" id="login-btn" routerLink='/login'>Login</button>
+            <button type="submit" class="btn btn-success" id="signUp-btn" routerLink='/signup'>Sign Up</button>
+        </ul>
+    </div>
+</nav>  -->
+
+<!--Background-->
+<div class="bg" style="background-image: url(/assets/Images/2.png);">
+
+    <!--Login Part-->
+    <div class="main container-fluid">
+        <div class="heading my-4">
+            <h2 class="fs-1"><b>Welcome to the Login Page!!</b></h2>
+        </div>
+        <div class="login">
+            <div class="row">
+                <div class="col-5">
+                    <div class="container my-4">
+                        <div class="card">
+                            <img src="/assets/Images/1.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><b>Book Your Ticket</b></h4>
+                                &nbsp;
+                                <h5 class="text-center">Anytime!! From Anywhere!!</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="ques"><em><b>Don't have an account? <span><a routerLink='/signup'><b>SIGN UP</b></a></span></b></em>
+                    </div>
+                    <form (ngSubmit)= "validate()" #frm=ngForm>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>Email address</b></label>
+                            <input name ="email" [(ngModel)]="user.email" type="email" class="form-control rounded-pill border border-3 border-success"
+                             placeholder="name@example.com" #umail=ngModel required>
+                             <div *ngIf="umail.invalid && umail.dirty" class="alert alert-warning" role="alert">
+                                 Invalid Email Id
+                             </div>
+                        </div>
+                        <div class="form mb-3">
+                            <label class="form-label"><b>Password</b></label>
+                            <input name ="password" [(ngModel)]="user.password" type="password" class="form-control rounded-pill border border-3 border-success"
+                            #pwd=ngModel required pattern="[A-Za-z0-9]{5,}">
+                            <div *ngIf="pwd.invalid && pwd.dirty" class="alert alert-warning" role="alert">
+                                Invalid Password
+                            </div>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="submit" [disabled]=!frm.valid class="btn btn-success btn-lg" >Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+
+<!--Admin Navbar-->
+<!--
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#91ee45f3;">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink='/admin-browse'>
+            <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse offset-md-6" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/add-bus'><b>Add Bus</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/admin_bus-list'><b>List Of Bus</b></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>Search Bus</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink='/search'><b>Bus Number</b></a></li>
+                        // <li><a class="dropdown-item" href="#">Destination</a></li>
+                        <li><a class="dropdown-item" href="#">Departure Date</a></li> //htana h
+                    </ul>
+                </li>
+                <button class="btn btn-success mx-3" (click)="logout()">Logout</button>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+-->
+<!--Update Bus-->
+<div class="card-fluid my-4">
+    <div class="row">
+        <div class="col-5">
+            <div class="container my-4">
+                <div class="card" style="width: 20rem; height: 12rem;">
+                    <img src="assets/Images/7.jpg" class="card-img-top">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-7">
+            <form class="card-text" (ngSubmit)="update()" #frm=ngForm>
+                <div class="form-group">
+                    <label for="bus"><b>Bus Number</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" name="busno" placeholder="Enter the bus number" [(ngModel)]="addBus.busno" readonly
+                     #bno=ngModel>
+                 
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Source</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <select class="form-control" name="source" [(ngModel)]="addBus.departureCity" #src=ngModel required>
+                        <option *ngFor="let s of source" [value]="s">{{s}}</option>
+                    </select>
+                    <div *ngIf="src.invalid && src.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Destination</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <select class="form-control" name="destination" [(ngModel)]="addBus.arrivalCity" #des=ngModel required>
+                        <option *ngFor="let d of destination" [value]="d">{{d}}</option>
+                    </select>
+                    <div *ngIf="des.invalid && des.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Agency</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" type="text" placeholder="Enter the bus agency" name="agency" [(ngModel)]="addBus.agency" #agen=ngModel required>
+                    <div *ngIf="agen.invalid && agen.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Bus Type</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <select class="form-control" type="text" name="busType" placeholder="Enter the bus type" [(ngModel)]="addBus.busType" #bty=ngModel required>
+                        <option *ngFor="let t of busType" [value]="t">{{t}}</option>
+                    </select>
+                    <div *ngIf="bty.invalid && bty.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Date of Departure</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" type="date" name="dateOfDep" [(ngModel)]="addBus.dateOfDeparture" #ddate=ngModel required>
+                    <div *ngIf="ddate.invalid && ddate.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Departure Time</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" type="time" name="depTime" [(ngModel)]="addBus.departuretime" #dtime=ngModel
+                        required>
+                    <div *ngIf="dtime.invalid && dtime.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Number of Seats</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" name="noOfseats" placeholder="Enter the number of seats" [(ngModel)]="addBus.seats" #seatsNo=ngModel required>
+                    <div *ngIf="seatsNo.invalid && seatsNo.dirty">Invalid</div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="bus"><b>Ticket Price</b></label>
+                    &nbsp;&nbsp;&nbsp;
+                    <input class="form-control" name="price" placeholder="Enter the price of ticket per head" [(ngModel)]="addBus.price" #tprice=ngModel required>
+                    <div *ngIf="tprice.invalid && tprice.dirty">Invalid</div>
+                </div>
+                <br>
+                <br>
+                <div class="btn-group" role="group">
+                    <button type="submit" [disabled]="!frm.valid" class="btn btn-danger btn-lg">Save</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="reset" [disabled]=!frm.valid class="btn btn-danger btn-lg">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

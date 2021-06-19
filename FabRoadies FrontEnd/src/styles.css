@@ -1,0 +1,246 @@
+/* You can add global styles to this file, and also import other style files */
+
+nav{
+    height: 85px;
+}
+#bus-icon {
+    height: 75px;
+    width: 69px;
+    border: 3px dotted darkgreen;
+    border-radius: 50%;
+}
+
+#from-location,#to-location,#date,#search-btn{
+    height: 60px;
+    width: 18rem;
+}
+
+#login-btn,
+#signUp-btn {
+    margin: 5px;
+}
+
+#first-backgrnd {
+    background-image: url('https://i.gadgets360cdn.com/large/bus_irctc_1612589991819.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 495px;
+    text-align: center;
+}
+
+#tag-line{
+    /* margin: 5px; */
+    color: white;
+    position: relative;
+    top: 155px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 45px;
+    text-align: left;
+}
+
+.location-bar {
+    position: relative;
+    top: 262px;
+    padding-left: 40px;
+}
+
+#search-btn {
+    width: 12rem;
+}
+
+
+#aboutUs{
+    height: 250px;
+    text-align: center;
+    /* margin: 20px; */
+    background-color:rgba(246, 248, 98, 0.363);
+    /* text-align: center;
+    background-color:whitesmoke;
+    width: 1300px;
+    border: 10px solid greenyellow;
+    padding: 50px; */
+}
+#aboutUs img{
+    height: 6%;
+    width: 10%;
+    float: right;
+    border: 6px groove rgba(15, 150, 15, 0.616);
+    border-radius: 12px;
+}
+
+.booking-process{
+    background-color:rgba(246, 248, 98, 0.363);
+}
+
+.booking-icons{
+    cursor: pointer;
+    height: 85%;
+    width: 80%;
+    /* border:3px solid darkblue; */
+    border-radius: 50%;
+    border: 8px solid rgba(128, 128, 128, 0.445);
+    border-style: inset;
+    box-shadow: 4px 4px 8px rgb(52, 138, 138);
+}
+
+.bus-route{
+    background: url('/assets/destination-img.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#destination-icon{
+    cursor: pointer;
+    margin: 18px;
+    background-color: rgba(196, 115, 243, 0.815);
+}
+
+#destination-icon:hover{
+    background-color: rgba(0, 204, 255, 0.678);
+}
+
+#icon-para{
+    text-align: center;
+    font-size: 20px;
+}
+
+#feedback-form{
+    padding: 10px;
+    background: linear-gradient(rgb(217, 255, 0),rgb(10, 146, 6));
+}
+
+.foot-icon{
+    height: 9%;
+    width: 5%;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/*test styles*/
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.menu {
+   
+    background: coral
+}
+.menu ul li {
+    padding: 10px 20px;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+table {
+    border: 1px solid #dee2e6;
+}
+
+
+
+
+
+.footer {
+    border-top: 3px solid coral;
+}
+
+
+.block {
+    background: #FBFBFB;
+    height: 276px;
+    padding: 35px;
+}
+.block li {
+    margin: 5px 0;
+}
+
+.slider img {
+    width:100%;
+    height: 276px;
+}
+
+
+
+
+
+
+
+    .overlap {
+       
+        background-color: rgb(178, 190, 195,.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%
+    }
+
+    .btn-search {
+        background: coral;
+        border-color:coral ;
+        color:#fff;
+    }
+
+    .seats {
+        width: 201px;
+        border: 1px solid rgb(197, 62, 62);
+        padding: 20px;
+        margin: 41px auto;
+        /* height: 100%; */
+        padding-left: 34px;
+        padding-right: 10px;
+        float: left;
+    }
+
+.handle {
+    float: left;
+    width: 100%;
+}
+.handle img {
+    float: right;
+}
+    .row1  {
+        float: left;
+        width: 50%;
+    }
+
+    .row1 ul {
+        width: 40%;
+        float: left;
+    }
+
+    .seat_plan_wrap {
+        border: 3px solid coral;
+        padding: 40px;
+    }
+    .total{
+        margin-top: 10px;
+        background: rgb(235, 232, 232);
+        padding: 7px;
+        border: 1px solid rgb(133, 57, 57);
+    }   
+
+    .seat_plan {
+        height: 270px;
+    }
+    .alert {
+        float: left;
+    }
+    /* MODAL WIDTH EDIT  */
+
+    .modal-dialog {
+        max-width:900px!important;
+    }

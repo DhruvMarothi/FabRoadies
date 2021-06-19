@@ -1,0 +1,55 @@
+<div class="card-fluid my-4">
+    <div class="row">
+        <div class="col-7">
+            <form class="card-text" (ngSubmit)="save1()" #frm=ngForm>
+                <div>
+                    <div class="container" style="border:4px solid red;border-radius: 10px;padding: 10px;">
+                        <div>
+                            <label for="formGroupExampleInput" class="form-label">Passenger </label>|
+                            <label for="formGroupExampleInput" class="form-label">Seat No: {{seatno}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="passenger"><b>Name</b></label>
+                            <input class="form-control" name="name" placeholder="Enter the name"
+                                [(ngModel)]="temp.name" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="passenger"><b>Gender</b></label>
+                            <input class="form-control" name="gender" placeholder="Enter the gender"
+                                [(ngModel)]="temp.gender" />
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="bus"><b>Age</b></label>
+                            <input class="form-control" name="Age" placeholder="Enter the age" [(ngModel)]="temp.age" />
+                        </div>
+                        <br>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-success btn-lg" (click)="save()" [disabled]=flag>Add Passenger</button>
+                        </div>
+                    </div>
+                    <br />
+                    <hr />
+                    <div>
+                        <label for="formGroupExampleInput" class="form-label">Contact Details </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="passenger"><b>Email</b></label>
+                        <input class="form-control" name="email" placeholder="Enter the Email" [(ngModel)]="email" />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="bus"><b>Phone Number</b></label>
+                        <input class="form-control" name="phone" placeholder="Enter the Phone Number"
+                            [(ngModel)]="phone" />
+                    </div>
+                    <br>
+                    <div class="btn-group" role="group">
+                        <button type="submit" class="btn btn-success btn-lg">Proceed To Book</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
