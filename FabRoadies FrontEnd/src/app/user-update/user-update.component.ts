@@ -16,7 +16,7 @@ export class UserUpdateComponent implements OnInit {
   constructor(private router:Router,private service : AdminService) { }
 
   ngOnInit(): void {
-   // uid=localStorage.getItem("user")
+   
     var t= localStorage.getItem('user');
     
     if(t!=null)
@@ -31,9 +31,7 @@ export class UserUpdateComponent implements OnInit {
 
     // console.log("Your data is submitted successfully" + this.user.name +":"+ this.user.phnNo +":"+ this.user.email +":"+ this.user.password);
     this.service.updateUser(this.user);
-  //  console.log(this.user);
-  
-  //  alert("Your data is updated successfully");
+ 
     }
 
     //logout

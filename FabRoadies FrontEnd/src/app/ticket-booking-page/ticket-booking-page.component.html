@@ -3,43 +3,7 @@
 <!--Page to be loaded with filtered search results of buses-->
 <!--To Do - link view seats button to gui to bus seats-->
 
-<!-- navbar part -->
-<!--
-<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
-    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
-        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto offset-md-4">
-            <li class="nav-item active">
-                <a class="nav-link" href="#aboutUs">About Us</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Manage Bookings
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Change Date</a></li>
-                    <li><a class="dropdown-item" href="#">Cancel Trip</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#bus-routes">Top Bus Routes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#feedback-form">Contact Us</a>
-            </li>
-            <button type="submit" class="btn btn-success" id="login-btn" routerLink='/login'>Login</button>
-            <button type="submit" class="btn btn-success" id="signUp-btn" routerLink='/signup'>Sign Up</button>
-        </ul>
-    </div>
-</nav>
--->
+
 
 <div style="height:10px"></div>
 <!--Main ticket booking logic-->
@@ -108,8 +72,9 @@
                               <app-select-seat (closeModal)="closeModal()" ></app-select-seat>       <!--Select seat component linked inside modal-->
                             </div>
                         </ng-template>
+
                         <div class="col-md-2 text-right">       <!--View Seats Button-->
-                            <button mat-flat-button style="width: 10em;" color="accent" (click)="saveBus(b)" (click)="openModal(template)"  class="btn btn-danger btn-sm">
+                            <button type="button" class="btn btn-primary"   (click)="saveBus(b)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 <p> View Seats</p>
                             </button>
                         </div>
@@ -119,3 +84,33 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+       <center> <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel"><b style="color:rosybrown;font-size:20px;">Select Your Luxury Seat</b></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+    </center>
+        <div class="modal-body">
+        <div style="height: 700px;">
+          
+            <app-select-seat ></app-select-seat>  
+        </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+ 

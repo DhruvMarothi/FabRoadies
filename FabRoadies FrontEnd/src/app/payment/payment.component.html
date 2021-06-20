@@ -1,56 +1,6 @@
-<!--@author Sanchari-->
-<!--@Payment Page-->
-
-<!-- navbar part-->
-<!--
-<nav class="container-fluid navbar navbar-expand-lg navbar-light fixed-top" style="background-color:#91ee45f3;">
-    <a class="navbar-brand" href="#" style="font-family: 'Francois One', sans-serif;font-size:35px;">
-        <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto offset-md-4">
-            <li class="nav-item active">
-                <a class="nav-link" href="#aboutUs"><b>About Us</b></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <b>Manage Bookings</b>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#"><b>My Tickets</b></a></li>
-                    <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>
-                    <li><a class="dropdown-item" href="#"><b>Cancel Trip</b></a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#bus-routes"><b>Top Bus Routes</b></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#feedback-form"><b>Contact Us</b></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <b>User Profile</b>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" routerLink='/user-update'><b>Update Profile</b></a></li>
-                    <li><a class="dropdown-item" (click)="logout()"><b>Logout</b></a></li>
-                </ul>
-            </li>            
-        </ul>
-    </div>
-</nav>  -->
 
 <!--Background-->
-<div style="height:200px">
 
-</div>
 
 <div class="bg" style="background-image: url(/assets/Images/4.png);">
 
@@ -108,7 +58,7 @@
                             #exp=ngModel required>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="submit" [disabled]=!frm.valid class="btn btn-danger btn-lg">Proceed To Pay</button>
+                            <button type="submit" [disabled]=!frm.valid class="btn btn-danger btn-lg" (click)="bookreq()">Proceed To Pay</button>
                         </div>
                         <p class="fs-5"><img src="assets/Images/5.png"></p>  
                     </form>

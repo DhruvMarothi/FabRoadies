@@ -1,52 +1,4 @@
-<!-- navbar part -->
-<!--Admin Navbar-->
-<!--
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#91ee45f3;">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink='/admin-browse'>
-            <img id="bus-icon" src="/assets/icon01.jpg"> FabRoadies</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse offset-md-5" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#aboutUs"><b>About Us</b></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>Manage Bookings</b>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink='/ticket-list'><b>My Tickets</b></a></li>
-                        <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>
-                        <li><a class="dropdown-item" href="#"><b>Cancel Trip</b></a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#feedback-form"><b>Contact Us</b></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <b>User Profile</b>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink='/user-update'><b>Update Profile</b></a></li>
-                        <li><a class="dropdown-item" (click)="logout()"><b>Logout</b></a></li>
-                    </ul>
-                </li>       
-            </ul>
-        </div>
-    </div>
-</nav>   
--->
-<!--Ticket List UI-->
-<!--@Author: Dhruv Marothi-->
-<!--@Version 1.0-->
-<!--Page to be loaded with all tickets of the respective user-->
+
 <div style="height:100px;"></div>
 <div class="container-fluid my-2">
     <center><button class="btn btn-warning" (click)="showUpcoming()">Show\Hide Upcoming Trips</button></center>
@@ -83,7 +35,7 @@
 
                     <td>{{u.price}}</td>
                     <td>
-                        <!-- <center><button class="btn btn-info">View Passenger</button></center> -->
+
                         <div>
                             <ng-template #template>
                                 <div class="modal-xl modal-body">

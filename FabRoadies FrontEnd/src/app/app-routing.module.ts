@@ -15,6 +15,7 @@ import { TicketBookingPageComponent } from './ticket-booking-page/ticket-booking
 import { EnterPassengerDetailsComponent } from './enter-passenger-details/enter-passenger-details.component';
 import { PassengerListComponent } from './passenger-list/passenger-list.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path: 'enter-passengers', component: EnterPassengerDetailsComponent},
   {path: 'passenger-list', component: PassengerListComponent},
   {path:'user-update',component:UserUpdateComponent},
+  {path:'payment-component',component:PaymentComponent},
 
   {path:'**',redirectTo:'home',pathMatch:'full'},
  

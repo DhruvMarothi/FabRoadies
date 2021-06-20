@@ -28,6 +28,7 @@ import { EnterPassengerDetailsComponent } from './enter-passenger-details/enter-
 import { SelectSeatComponent } from './select-seat/select-seat.component';
 import { PassengerListComponent } from './passenger-list/passenger-list.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     EnterPassengerDetailsComponent,
     PassengerListComponent,
     UserUpdateComponent,
+    PaymentComponent,
  
   ],
 

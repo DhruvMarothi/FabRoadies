@@ -14,19 +14,17 @@ import { filter } from 'rxjs/operators';
   templateUrl: './ticket-booking-page.component.html',
   styleUrls: ['./ticket-booking-page.component.css']
 })
-export class TicketBookingPageComponent implements OnInit, OnDestroy {
+export class TicketBookingPageComponent implements OnInit{
   modalRef!: BsModalRef;
   bus!: BusAdmin;
-  //Routing to be done 
-  buses: BusAdmin[] = [];// bus array to be populated from browse page results ; if 0 to be routed to no-buses-found page
+  
+  buses: BusAdmin[] = [];
   constructor(
     private modalService: BsModalService, private service: AdminService, private router: Router, private aroute: ActivatedRoute) { }
-  ngOnDestroy(): void {
-    throw new Error("Method not implemented.");
-  }
+ 
 
   ngOnInit(): void {
-
+   
     this.aroute.queryParams.pipe(filter(params => (params.src, params.dest, params.date))).subscribe(params => {
 
       this.service.findbus(params.src, params.dest, params.date).subscribe(data => this.buses = data);
@@ -35,6 +33,8 @@ export class TicketBookingPageComponent implements OnInit, OnDestroy {
 
   saveBus(bus: BusAdmin) {
     this.bus = bus;
+    this.service.busObj = this.bus;
+
   }
 
   openModal(template: TemplateRef<any>) {

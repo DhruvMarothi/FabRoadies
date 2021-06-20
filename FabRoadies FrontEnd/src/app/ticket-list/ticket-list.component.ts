@@ -80,19 +80,5 @@ export class TicketListComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  // getPassenger(ticketId: number){
-
-  //   // this.service.pList = this.pList;
-  //   // this.service.tid = ticketId;
-  //   this.tid=ticketId;
-  //   alert("hello");
-  //   this.router.navigate(['passenger-list']);
-  // }
-  //logout
-  /*
-  logout(){
-    this.router.navigate(['user-home']);
-  }
-*/
 
 }

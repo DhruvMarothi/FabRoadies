@@ -33,6 +33,13 @@ export class SelectSeatComponent implements OnInit {
     modalClass: 'modal-xl';
    
   }
+addSeatlist()
+  {
+   
+    this.service.seatLists = this.seatList;
+
+
+  }
 
   closeModal(){
     this.modalRef.hide();
@@ -58,7 +65,7 @@ export class SelectSeatComponent implements OnInit {
     let seat={                                   //seat instance using iamge d
       seatno: x,
       price: prices 
-                //this.bus.price  To be made dynamic from bus component from which seats are being viewed
+               
     }
 
     var img_path = document.getElementById(x) as HTMLImageElement;

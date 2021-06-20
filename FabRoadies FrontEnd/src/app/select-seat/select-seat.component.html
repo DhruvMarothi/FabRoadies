@@ -145,22 +145,34 @@
                 <b> Total : {{total}} </b>                        <!--<b>Total: {{total}}</b>-->
             </div>
 
-            <ng-template #template>                  <!--Modal Template-->
-              <div id="hs" class="modal-xl modal-body" >
-                  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                <app-enter-passenger-details (closeModal)="closeModal()" ></app-enter-passenger-details>       <!--Enter-details component linked inside modal-->
-              </div>
-            </ng-template>
+           
 
             <div class="row ">
-              <button  id="confirm" (click)="openModal(template)"class=" btn mt-3 ml-3 btn-primary btn-sm btn-block">Confirm</button>
-          
+            
+              <button type="button" (click)="addSeatlist()" class="btn btn-success" id="confirm"   data-bs-toggle="modal" data-bs-target="#statics" >Confirm</button>
             </div>
           </div>
         </div>
       </div>
+      </div>
+    </div>
+  </div>
+
+   <!---modale 2-->
+   <div class="modal fade" id="statics" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel"><b style="color:rosybrown;font-size:20px;">Passenger Details</b></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <div style="height: 700px;">
+            
+         <app-enter-passenger-details ></app-enter-passenger-details>  
+        </div>
+        </div>
+        
       </div>
     </div>
   </div>

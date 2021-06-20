@@ -17,15 +17,16 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPayment() {
-
-    alert("Your data is submitted successfully");
-
+  bookreq()
+  {
+    var t = (localStorage.getItem('br'));
+    if(t!=null)
+    {
+     this.service.br = JSON.parse(t);
+    } 
+    console.log(this.service.br[0].busno);
+   this.service.bookReservation();
+    alert("Payment Successfully Completed");
   }
-
-    //logout
-    logout(){
-      this.router.navigate(['home']);
-    }
-
+  
   }

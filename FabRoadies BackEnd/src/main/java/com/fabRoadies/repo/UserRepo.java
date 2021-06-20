@@ -16,6 +16,4 @@ public interface UserRepo  extends JpaRepository<User, Integer>
 	@Query("from User where email=:uemail and password=:upassword")
 	User getByEmailPassword(String uemail,String upassword);
 	
-	
-
 	}

@@ -9,6 +9,14 @@
 #ss{
 
         color: indianred;
-        background-color: lawngreen;
+        background-color: #8aeef8;
         font-family: cursive;
+        width:19vw;
+      
+}
+#confirm
+{
+    margin-top:2vw;
+margin-left:1vw;
+width:19vw;
 }

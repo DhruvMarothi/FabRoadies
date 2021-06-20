@@ -34,9 +34,6 @@ export class UpdateComponent implements OnInit {
     this.router.navigate(['admin_bus-list']).then(()=>location.reload());
   } 
 
-  //logout function
- /* logout(){
-    this.router.navigate(['home']);
-  }*/
+  
 
 }
