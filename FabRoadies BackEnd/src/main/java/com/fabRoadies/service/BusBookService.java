@@ -114,8 +114,8 @@ public class BusBookService {
 		return savedReservation;
 	}
 	
-	public void otpSend() {
-		SendSms.sendsms("Your OTP no. is: "+ id, "8118808041");
+	public void otpSend(int uid) {
+		SendSms.sendsms("Your OTP no. is: "+ id, userRepository.findById(uid).get().getPhoneNumber());
 		this.otpSent=id;
 //		return this.id;
 	}

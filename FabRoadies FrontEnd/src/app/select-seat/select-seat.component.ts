@@ -50,6 +50,7 @@ addSeatlist()
     this.modalRef.hide();
   }
   ngOnInit(): void {
+    
   }
   seatList : seat[] = [] ;                             //Array storing the final selected seats to be given to next page asking details of passengers
   seatNumberList : string[] = [];

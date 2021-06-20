@@ -11,22 +11,32 @@ import { AdminService } from '../services/admin.service';
 export class PaymentComponent implements OnInit {
 
   user: User = new User();
+  otp: number = 0;
 
   constructor(private router: Router,private service : AdminService) { }
 
   ngOnInit(): void {
   }
-
-  bookreq()
-  {
-    var t = (localStorage.getItem('br'));
-    if(t!=null)
+    bookreq()
     {
-     this.service.br = JSON.parse(t);
-    } 
-    console.log(this.service.br[0].busno);
-   this.service.bookReservation();
-    alert("Payment Successfully Completed");
+      var t = (localStorage.getItem('br'));
+      if(t!=null)
+      {
+       this.service.br = JSON.parse(t);
+      } 
+     
+     this.service.bookReservation(this.otp);
+     alert(this.otp)
+      alert("Payment Successfully Completed");
+    }
+
+    otpSend()
+    {
+      this.service.getOtp();
+    }
   }
+ 
+
+
   
-  }
+  

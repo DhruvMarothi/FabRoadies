@@ -64,7 +64,6 @@ export class AdminService {
   {
     console.log(user)
     this.http.put(this.baseUrl + "/user/update", user).subscribe();
-
   }
   
   addUser(user: User) {
@@ -73,6 +72,17 @@ export class AdminService {
   
   loginUser(email: string, password: string) {
     return this.http.get<Role>(this.baseUrl + "/login/" + email + "/" + password);
+  }
+
+  getOtp(){
+    // alert("Hi");
+    var t= localStorage.getItem('user');
+    if(t!=null)
+    {
+     this.uid = +t;
+    }
+    return this.http.get<any>(this.baseUrl + "/otpSend/"+this.uid).subscribe();
+    // alert("Hello");
   }
 
   async gettickets() {
@@ -92,7 +102,7 @@ export class AdminService {
     return this.http.post<BusAdmin[]>(this.baseUrl + "/findBuses", this.bq);
   }
 
-  bookReservation(){
+  bookReservation(otp: number){
     // this.booktemp.userid=171;
     // this.booktemp.busno="DM01";
     // this.booktemp.name="Dhruv";
@@ -103,7 +113,7 @@ export class AdminService {
     // this.booktemp.phone="876560964";
     // this.br.push(this.booktemp);
     // alert(this.br[1].name);
-    this.http.post(this.baseUrl + "/completeReservation", this.br).subscribe();
+    this.http.post(this.baseUrl + "/completeReservation/" + otp, this.br).subscribe();
     // console.log(this.br);
   }
 

@@ -26,13 +26,16 @@ export class EnterPassengerDetailsComponent implements OnInit {
   gender: string='';
   seatno: string='';
   gen:string[]=["Male","Female","Other"];
-  
+  private mdlSampleIsOpen : boolean = false;
  
   constructor(private aroute : ActivatedRoute,private service : AdminService,private router:Router) { }
 
   ngOnInit(): void {
   
        }
+       private openModal(open : boolean) : void {
+        this.mdlSampleIsOpen = open;
+    }
 
   saveEmail(email: string) {
     this.email = email;
@@ -57,7 +60,7 @@ export class EnterPassengerDetailsComponent implements OnInit {
         this.index= this.index+1;
       }
     }
-    if(this.index==this.seatLists.length)
+    if(this.index==this.seatLists.length || this.seatLists.length==1)
       this.flag = true;
 
     alert(this.psngr[0].name)
@@ -71,7 +74,7 @@ export class EnterPassengerDetailsComponent implements OnInit {
     if(t!=null)
     {
      this.service.uid = +t;
-    } 
+     
    
     for(let i=0;i<this.seatLists.length;i++){
       this.bookReq.push(new bookreq(this.service.uid,this.psngr[i].seatno,this.bus.busno,this.psngr[i].name,this.psngr[i].gender,this.psngr[i].age,this.email,this.phone));
@@ -79,15 +82,29 @@ export class EnterPassengerDetailsComponent implements OnInit {
    
 
     this.service.br=this.bookReq;
-    //console.log(this.service.br)
+   
     localStorage.setItem('br', JSON.stringify(this.bookReq));
-    this.router.navigate(['payment-component']).then(()=>location.reload());
+    this.router.navigate(['payment-component']).then(()=>(location.reload()) );
     
    // this.service.bookReservation();
    
-  }
+     }
+     else{
+
+       alert("user is not login")
+    
+    
+       this.router.navigate(['login']).then(()=>(location.reload()) );
+
+     }
+    
+    }
+    
 
   test(){
     alert(this.email);
   }
+
+ 
+
 }

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fabRoadies.dto.BookingRequest;
-import com.fabRoadies.entity.Ticket;
 import com.fabRoadies.service.BusBookService;
 
 @RestController
@@ -23,9 +22,10 @@ public class BusBookController {
 	@Autowired
     private BusBookService reservationService;
 	
-	@GetMapping(value= "/otpSend")
-	public void otpSend() {
-		reservationService.otpSend();
+	@GetMapping(value= "/otpSend/{uid}")
+	public int otpSend(@PathVariable("uid") int uid) {
+		reservationService.otpSend(uid);
+		return 0;
 	}
 	
 	@RequestMapping(value = "/completeReservation/{otp}",method = RequestMethod.POST)
