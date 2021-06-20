@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
-public class SendSms {
+public class LoginSms {
 
 	public static void sendsms(String message, String number) {
 

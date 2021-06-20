@@ -6,6 +6,8 @@ import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,12 +22,18 @@ import com.fabRoadies.service.BusBookService;
 public class BusBookController {
 	@Autowired
     private BusBookService reservationService;
-
-	@RequestMapping(value = "/completeReservation",method = RequestMethod.POST)
-	 public String completeReservation(@RequestBody List<BookingRequest> reservationRequest) throws MessagingException{
-      
-        Ticket reservation=reservationService.bookBus(reservationRequest);
-        return null;
+	
+	@GetMapping(value= "/otpSend")
+	public void otpSend() {
+		reservationService.otpSend();
+	}
+	
+	@RequestMapping(value = "/completeReservation/{otp}",method = RequestMethod.POST)
+	 public void completeReservation(@RequestBody List<BookingRequest> reservationRequest,@PathVariable("otp") int otp) throws MessagingException{
+		
+		if(reservationService.verification(otp))
+			reservationService.bookBus(reservationRequest);
+//        return null;
       
     }  
 	

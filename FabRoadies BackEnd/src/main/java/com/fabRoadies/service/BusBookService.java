@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 import javax.mail.MessagingException;
 import javax.transaction.Transactional;
@@ -47,6 +48,10 @@ public class BusBookService {
 	private UserRepo userRepository;
 	@Autowired
 	private Emailsend service;
+	
+	private Random random = new Random();
+	private String id = String.format("%04d", random.nextInt(10000));
+	private String otpSent;
 
 	public Ticket bookBus(List<BookingRequest> reservationRequest) throws MessagingException {
 
@@ -103,9 +108,28 @@ public class BusBookService {
 //		Message Sent
 
 //		hello This is FabRoadies.Have a safe Journey
-//		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey and enjoy your trip",reservationRequest.get(0).getPhone());
-
+		SendSms.sendsms("Hello, This is FabRoadies.Have a safe Journey and enjoy your trip",reservationRequest.get(0).getPhone());
+		
 //		System.out.println("message sent");
 		return savedReservation;
+	}
+	
+	public void otpSend() {
+		SendSms.sendsms("Your OTP no. is: "+ id, "8118808041");
+		this.otpSent=id;
+//		return this.id;
+	}
+	
+	public boolean verification(int otp) {
+		System.out.println(otp);
+		System.out.println(this.id);
+		System.out.println(this.otpSent);
+		if(Integer.toString(otp).equals(this.otpSent)) {
+			System.out.println("Dhruv");
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
