@@ -3,67 +3,97 @@
 
 <!-- background, location set and search part -->
 <div class="container-fluid" id="first-backgrnd">
+    <center>
     <div id="tag-line">Experience Travel like Never Before!</div>
     <div class="row location-bar">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="From" aria-label="From" id="from-location"  [(ngModel)]="busq.source">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <!--<input type="text" class="form-control" placeholder="From" aria-label="From" id="from-location"  [(ngModel)]="busq.source"> -->
+            
+            <select  placeholder="From" id="from-location" class="form-control" name="destination" [(ngModel)]="busq.source" #des=ngModel required  >
+                <option value="" disabled selected hidden>From</option> 
+                <option *ngFor="let d of source" [value]="d">{{d}}</option>
+            </select>
         </div>
-        <div class="col">
-            <input type="text" class="form-control" placeholder="To" aria-label="To" id="to-location" [(ngModel)]="busq.destination">
+
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <!--<input type="text" class="form-control" placeholder="To" aria-label="To" id="to-location" [(ngModel)]="busq.destination"> -->
+            <select id="to-location" class="form-control" name="destination" [(ngModel)]="busq.destination" #des=ngModel required placeholder="To">
+                <option value="" disabled selected hidden>To</option> 
+                <option *ngFor="let d of destination" [value]="d">{{d}}</option>
+            </select>
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <input type="date" min={{date}} class="form-control" aria-label="Date" id="date" [(ngModel)]="busq.dateOfDeparture"> 
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <button id="search-btn" type="submit" class="btn btn-info btn-rounded" (click)="searchBusBysdd(busq)">Search Buses</button>
         </div>
     </div>
+</center>
 </div>
 <!--About Us part-->
-<div class="container-fluid my-4" id="aboutUs">
-    <h2 class="my-4 py-3">About Us</h2>
-    <p class="mx-3">
-        <img src="/assets/icon01.jpg" alt="">
-        Fab Roadies is a budding brand in Bus booking which aims to give you an experience worth remembering. We
-        believe in the fact that while on vacations or trips or journeys, the time you spend on road is the most
-        important one as It affects our moods and we make most of our priceless memories on roads itself. Thus, We
-        are committed on a mission to make every Indian's road journey a spellbound experience.
 
-        We hope you would have loved travelling with us, and we are open to all kinds of worthy feedbacks and/ or
-        suggestions you might have for us, Tell us !!!
-        (Feedback Form Link)
-    </p>
+<div class="card mb-3 my-4" id="abouts" style="max-width:100%; background: -webkit-linear-gradient(rgb(231, 229, 229),rgba(246, 248, 98, 0.363))">
+  <div style="height:70px;"></div>
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="/assets/icon01.jpg" class="border border-5 rounded" style="width: 12rem;margin-top: 0.2rem;"
+                alt="icon">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title fs-2 p-2 fw-bold">About Us</h5>
+                <p class="card-text">Fab Roadies is a budding brand in Bus booking which aims to give you an experience
+                    worth remembering. We
+                    believe in the fact that while on vacations or trips or journeys, the time you spend on road is the
+                    most
+                    important one as It affects our moods and we make most of our priceless memories on roads itself.
+                    Thus, We
+                    are committed on a mission to make every Indian's road journey a spellbound experience.
+
+                    We hope you would have loved travelling with us, and we are open to all kinds of worthy feedbacks
+                    and/ or
+                    suggestions you might have for us, Tell us in the Feedback Form !!!
+                    </p>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <!--Booking Procedure part-->
 <div class="container-fluid booking-process">
+    <center>
     <h2 class="text-center py-3">Booking Process</h2>
     <p class="text-center">Book your Bus in just 4 easy steps</p>
-    <div class="row my-4">
-        <div class="col">
+    <div class="row destination-row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <img class="booking-icons" src="/assets/search-icon-img.png" alt="">
             <p id="icon-para">Search</p>
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <img class="booking-icons" src="/assets/bus-icon-img03.png" alt="">
             <p id="icon-para">Select your Bus</p>
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <img class="booking-icons" src="/assets/booking-icon-img02.png" alt="">
             <p id="icon-para">Book</p>
         </div>
-        <div class="col">
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <img class="booking-icons" src="/assets/pay-icon-img.jpg" alt="">
             <p id="icon-para">Pay and Travel!</p>
         </div>
     </div>
+</center>
 </div>
+
 
 <!--Destination part-->
 <div class="container-fluid bus-route my-4" id="bus-routes">
+    <center>
     <h2 class="text-center py-3">Top Bus Routes</h2>
     <div class="row destination-row">
-        <div class="col-4 col-lg-4 col-sm-1">
+        <div class="col-md-4 col-sm-6">
             <div class="card mx-bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/bangalore-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -76,7 +106,8 @@
                 </div>
             </div>
         </div>
-        <div class=" col-4 col-lg-4 col-sm-1">
+        <!--col-4 col-lg-4 col-sm-1-->
+        <div class=" col-md-4 col-sm-6">
             <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/chennai-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -89,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-lg-4 col-sm-1">
+        <div class="col-md-4 col-sm-6">
             <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/pune-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -103,8 +134,9 @@
             </div>
         </div>
     </div>
+
     <div class="row">
-        <div class="col-4 col-lg-4 col-sm-1">
+        <div class="col-md-4 col-sm-6">
             <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/mumbai-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -117,7 +149,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-lg-4 col-sm-1">
+        <div class="col-md-4 col-sm-6">
             <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/kolkata-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -130,7 +162,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-lg-4 col-sm-1">
+        <div class="col-md-4 col-sm-6">
             <div class="card bg-image hover-zoom" id="destination-icon" style="width: 18rem;">
                 <img src="/assets/delhi-img.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -144,7 +176,10 @@
             </div>
         </div>
     </div>
+</center>
 </div>
+
+
 
 <!--Feedback Form-->
 <div class="container-fluid my-4" id="feedback-form">

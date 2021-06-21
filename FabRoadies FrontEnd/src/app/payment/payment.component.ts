@@ -17,6 +17,9 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
+  
     bookreq()
     {
       var t = (localStorage.getItem('br'));
@@ -24,14 +27,16 @@ export class PaymentComponent implements OnInit {
       {
        this.service.br = JSON.parse(t);
       } 
-     
-     this.service.bookReservation(this.otp);
-     alert(this.otp)
-      alert("Payment Successfully Completed");
+   
+      this.service.bookReservation(this.otp);
+      this.router.navigate(['mytrip']).then(()=>{location.reload()});
+    //  alert("Payment Successfully Completed");
     }
-
+   
     otpSend()
     {
+     
+      
       this.service.getOtp();
     }
   }

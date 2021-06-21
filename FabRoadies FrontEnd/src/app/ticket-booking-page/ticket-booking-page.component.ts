@@ -17,8 +17,10 @@ import { filter } from 'rxjs/operators';
 export class TicketBookingPageComponent implements OnInit{
   modalRef!: BsModalRef;
   bus!: BusAdmin;
-  
+  public log:boolean=false;
+
   buses: BusAdmin[] = [];
+  
   constructor(
     private modalService: BsModalService, private service: AdminService, private router: Router, private aroute: ActivatedRoute) { }
  
@@ -27,9 +29,23 @@ export class TicketBookingPageComponent implements OnInit{
    
     this.aroute.queryParams.pipe(filter(params => (params.src, params.dest, params.date))).subscribe(params => {
 
+      
       this.service.findbus(params.src, params.dest, params.date).subscribe(data => this.buses = data);
+
     })
+
+    if(localStorage.getItem("log")!=null) 
+    {
+      this.log=true;
+    }
+    else{
+      this.log=false;
+    }
+
+    
+    
   }
+ 
 
   saveBus(bus: BusAdmin) {
     this.bus = bus;

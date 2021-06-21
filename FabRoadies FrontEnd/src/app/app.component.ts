@@ -40,11 +40,13 @@ ngOnInit():void{
     if(localStorage.getItem("admin")!=null)
     {
       localStorage.removeItem("admin")
+      localStorage.removeItem("user");////
       this.router.navigate(['home']).then(()=>{
         location.reload();
        });
     }
     localStorage.removeItem("log");
+    localStorage.removeItem("user");////
     this.router.navigate(['home']).then(()=>{
       location.reload();
      });

@@ -50,7 +50,6 @@ addSeatlist()
     this.modalRef.hide();
   }
   ngOnInit(): void {
-    
   }
   seatList : seat[] = [] ;                             //Array storing the final selected seats to be given to next page asking details of passengers
   seatNumberList : string[] = [];
@@ -71,7 +70,7 @@ addSeatlist()
 
     var img_path = document.getElementById(x) as HTMLImageElement;
     if ( img_path.src.match("/assets/normalSeat1.png")){
-      if( this.seatList.length != 6){
+      if( this.seatList.length != 5){
           img_path.src="../assets/selectedSeat.png";                   
           this.updateSeatList(seat);       // Will update selected seat in list
           this.updatePriceAdd(seat.price);    // Will update total price of booked tickets

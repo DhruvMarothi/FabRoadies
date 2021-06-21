@@ -35,13 +35,13 @@ nav{
     position: relative;
     top: 155px;
     font-family: 'Dancing Script', cursive;
-    font-size: 45px;
+    font-size: 5vw;
     text-align: left;
 }
 
 .location-bar {
     position: relative;
-    top: 262px;
+    top: 232px;
     padding-left: 40px;
 }
 
@@ -55,19 +55,26 @@ nav{
     text-align: center;
     /* margin: 20px; */
     background-color:rgba(246, 248, 98, 0.363);
-    /* text-align: center;
+}/*
+#aboutUs{
+    height: 250px;
+    text-align: center;
+    
+    background-color:rgba(246, 248, 98, 0.363);
+    /// text-align: center;
     background-color:whitesmoke;
     width: 1300px;
     border: 10px solid greenyellow;
-    padding: 50px; */
+    padding: 50px; ////commented
 }
+
 #aboutUs img{
     height: 6%;
     width: 10%;
     float: right;
     border: 6px groove rgba(15, 150, 15, 0.616);
     border-radius: 12px;
-}
+}   */
 
 .booking-process{
     background-color:rgba(246, 248, 98, 0.363);
@@ -244,3 +251,4 @@ table {
     .modal-dialog {
         max-width:900px!important;
     }
+    

@@ -2,9 +2,9 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
-.modal-confirm {		
-	color: #636363;
-	width: 400px;
+.modal-confirm {
+    color: #636363;
+    width: 400px;
 }
 
 .modal-confirm .modal-content {
@@ -57,31 +57,48 @@ body {
     margin-top: 13px;
 }
 
-.modal-confirm .btn,
-.modal-confirm .btn:active {
-    color: #fff;
-    border-radius: 4px;
-    background: #60c7c1;
+.button1 {
+    background-color: #ce401d;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
     text-decoration: none;
-    transition: all 0.4s;
-    line-height: normal;
-    min-width: 120px;
-    border: none;
-    min-height: 40px;
-    border-radius: 3px;
-    margin: 0 5px;
+    font-size: 16px;
 }
 
-.modal-confirm .btn-secondary:hover,
-.modal-confirm .btn-secondary:focus {
-    background: #a8a8a8;
+a {
+    color: #fff;
 }
 
-.modal-confirm .btn-danger {
-    background: #f15e5e;
+.button2,
+.button2:hover {
+    color: #fff;
+    border-radius: 8px;
+    background: #60c7c1;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+
 }
 
-.modal-confirm .btn-danger:hover,
-.modal-confirm .btn-danger:focus {
-    background: #ee3535;
+.button3,
+.button3:hover {
+    background-color: #ce401d;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button4 {
+    background-color: #1adb13ab;
+    border-radius: 8px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }

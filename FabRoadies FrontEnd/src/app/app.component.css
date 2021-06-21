@@ -1,0 +1,14 @@
+.effect:hover{
+  background-color: yellowgreen;
+  color: aliceblue;
+
+}
+
+.back{
+    background-color:#f6c3ce;
+    margin-left: -20px;
+    width:5vw;
+}
+.navlinks{
+  color:#023e8a;
+}

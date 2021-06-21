@@ -63,7 +63,7 @@ export class EnterPassengerDetailsComponent implements OnInit {
     if(this.index==this.seatLists.length || this.seatLists.length==1)
       this.flag = true;
 
-    alert(this.psngr[0].name)
+    alert(this.psngr[this.index].name+" "+"Added")
   }
 
   save1(){

@@ -8,15 +8,15 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto offset-md-4">
-            <li class="nav-item active">
-                <a class="nav-link" href="#aboutUs"><b>About Us</b></a>
+    <div  style="background-color: #91ee45f3;" class="collapse navbar-collapse offset-md-0.6 " id="navbarSupportedContent">
+        <ul  class="navbar-nav mr-auto offset-md-4">
+            <li  class="nav-item ">
+                <a class="nav-link fs-5 " href="#abouts"><b class="navlinks">About Us</b></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <b>Manage Bookings</b>
+                    <b class="navlinks">Manage Bookings</b>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                    <!-- <li><a class="dropdown-item" href="#"><b>Change Date</b></a></li>  -->
@@ -24,26 +24,26 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#bus-routes"><b>Top Bus Routes</b></a>
+                <a class="nav-link fs-5" href="#bus-routes"><b class="navlinks">Top Bus Routes</b></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#feedback-form"><b>Contact Us</b></a>
+                <a class="nav-link fs-5" href="#feedback-form"><b class="navlinks">Contact Us</b></a>
             </li>
          <!--  <button type="submit" class="btn btn-success" id="login-btn" routerLink='/login'>Login</button>
             <button type="submit" class="btn btn-success" id="signUp-btn" routerLink='/signup'>Sign Upsss</button>
         -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                <a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                   <!--  <b>User Profile</b>  -->
                     <img src="/assets/logo.png" style="height:40px;"/>
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a [hidden]=log class="dropdown-item"routerLink='/login' ><b>Login</b></a></li>
-                    <li><a [hidden]=log class="dropdown-item"routerLink='/signup' ><b>Sign Up</b></a></li>
-                    <li><a [hidden]=!log class="dropdown-item" routerLink='/user-update'><b>Edit Profile</b></a></li>
-                    <li><a [hidden]=!log class="dropdown-item" routerLink='/mytrip'><b>My Trips</b></a></li>
-                    <li><a [hidden]=!log class="dropdown-item" (click)="logout()" ><b>Logout</b></a></li>
+                <ul  class="dropdown-menu back " aria-labelledby="navbarDropdown">
+                    <li ><a   [hidden]=log class="dropdown-item effect"routerLink='/login' ><b>Login</b></a></li>
+                    <li><a [hidden]=log class="dropdown-item effect"routerLink='/signup' ><b>Sign Up</b></a></li>
+                    <li><a [hidden]=!log class="dropdown-item effect" routerLink='/user-update'><b>Edit Profile</b></a></li>
+                    <li><a [hidden]=!log class="dropdown-item effect" routerLink='/mytrip'><b>My Trips</b></a></li>
+                    <li><a [hidden]=!log class="dropdown-item effect" (click)="logout()" ><b>Logout</b></a></li>
                 </ul>
             </li>         
         </ul>
@@ -61,15 +61,16 @@
         <div class="collapse navbar-collapse offset-md-6" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink='/add-bus'>Add Bus</a>
+                    <a class="nav-link" routerLink='/add-bus'><b class="navlinks">Add Bus</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink='/admin_bus-list'>List Of Bus</a>
+                    <a class="nav-link" routerLink='/admin_bus-list'><b class="navlinks">List Of Bus</b></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Search Bus
+                        <b class="navlinks">
+                        Search Bus</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" routerLink='/search'>Bus Number</a></li>
@@ -94,6 +95,7 @@
 <div class="container-fluid">
     <router-outlet></router-outlet>
 </div>
+
 <!--Footer-->
 <footer class="footer mt-auto py-3 bg-light">
 

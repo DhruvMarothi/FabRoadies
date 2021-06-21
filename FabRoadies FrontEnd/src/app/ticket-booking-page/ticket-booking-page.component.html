@@ -3,11 +3,10 @@
 <!--Page to be loaded with filtered search results of buses-->
 <!--To Do - link view seats button to gui to bus seats-->
 
-
-
+<div>
 <div style="height:10px"></div>
 <!--Main ticket booking logic-->
-<div class="ticketbooking">
+<div  class="ticketbooking" >
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-10">
@@ -30,52 +29,48 @@
                         <div class="col-md-2 text-right"> <!--Heading Fare-->
                             <p> Fare </p>
                         </div>
-                        <div class="col-md-1 text-right"> <!--Heading Seats-->
+                        <!-- <div class="col-md-1 text-right">
                             <p> Seats</p>
-                        </div>
+                        </div>  -->
                     </div>
                 </div>
                 <div class="row mb-3 card card-body" *ngFor="let b of buses">           <!--opening div for single card body *ngFor="let b of buses" to be added-->  
                     <div class=" row">                          <!--Row1 Card 1-->
                         <div class="col-md-3 text-right">
-                            <p><b>{{b.agency}}</b></p>        <!--Agency {{b.agency}}-->
+                            <p>{{b.agency}}</p>        <!--Agency {{b.agency}}-->
                         </div>
-                        <div class="col-md-3">
-                            <p><b>{{b.departuretime}} </b></p>               <!--Departure Time {{b.departuretime}} -->
+                        <div class="col-md-3 text-right ">
+                            <p>{{b.departureCity}} </p>               <!--Departure Time {{b.departuretime}} -->
                         </div>
-                        <div class="col-md-3">
-                            <p> 04 : 56 </p>                    <!--Arrival Time {{b.arrivaltime}} Not defined in backend yet--> 
+                        <div class="col-md-3 text-right">
+                            <p> <b>{{b.arrivalCity }}</b></p>                    <!--Arrival Time {{b.arrivaltime}} Not defined in backend yet--> 
                         </div>
-                        <div class="col-md-2">
-                            <p><b>{{b.price}}</b></p>                 <!--Price {{b.price}}-->
+                        <div class="col-md-2 text-right">
+                            <p>{{b.price | currency: "INR" : "symbol"}}</p>                 <!--Price {{b.price}}-->
                         </div>
-                        <div class="col-md-1">
-                            <p>{{b.seats}}</p>                          <!--Seats {{b.seats}}-->
+                     <!--
+                         <div class="col-md-1">
+                            <p>{{b.seats}}</p>                          Seats {{b.seats}}
                         </div>
+                    -->
                     </div>
                     <div class="row">                           <!--Row 2 Card 1-->
                         <div class="col-md-3 text-right">
                             <p>  {{b.busType}}</p>                 <!--Bustype {{b.busType}}-->
                         </div>
-                        <div class="col-md-3">
-                            <p>{{b.departureCity}}</p>             <!--Departure City {{b.departureCity}}-->
+                        <div class="col-md-3 text-right">
+                            <p>{{b.departuretime}}</p>             <!--Departure City {{b.departureCity}}-->
                         </div>
-                        <div class="col-md-3">
-                            <p> {{b.arrivalCity}} </p>                <!--Arrival City  {{b.Arrival}}-->
+                       <!--<div class="col-md-3">
+                            <p> {{b.arrivalCity}} </p>                Arrival City  {{b.Arrival}}
                         </div>
-                        <div class="col-md-1"></div>
-                        <ng-template #template>                  <!--Seats Template-->
-                            <div class="modal-xl modal-body">
-                                <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                              <app-select-seat (closeModal)="closeModal()" ></app-select-seat>       <!--Select seat component linked inside modal-->
-                            </div>
-                        </ng-template>
+                         <div class="col-md-1"></div> -->
+                     
 
-                        <div class="col-md-2 text-right">       <!--View Seats Button-->
-                            <button type="button" class="btn btn-primary"   (click)="saveBus(b)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                <p> View Seats</p>
+                        <div class="col-md-6 text-right">       <!--View Seats Button-->
+                            <button [disabled]=!log value="View Seats"type="button" class="btn btn-primary"   (click)="saveBus(b)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                               <p> View Seats</p>
+                              <!-- <img src="/assets/loader.gif" alt="funny GIF" width="100%">-->
                             </button>
                         </div>
                     </div>
@@ -87,9 +82,11 @@
 
 
 
+<!---nobus-->
+<div  style="height:20px"></div>
 
 
-  
+
 
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
