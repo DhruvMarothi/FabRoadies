@@ -12,7 +12,9 @@
                 <th scope="col">Date of Departure</th>
                 <th scope="col">Departure Time</th>
                 <th scope="col">No. of Seats</th>
-                <th scope="col" colspan="3">Price</th>
+                <th scope="col" >Price</th>
+                <th scope="col" >Edit</th>
+                <th scope="col" >Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +28,8 @@
                 <td>{{b.departuretime}}</td>
                 <td>{{b.seats}}</td>
                 <td>{{b.price}}</td>
-                <td><button class="btn btn-info" (click)="update(b.busno)">Update</button></td>
-                <td><button class="btn btn-danger" (click)="remove(b.busno)">Delete</button></td>
+                <td><button class="btn btn-info" (click)="update(b.busno)">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="remove(b.busno)">Remove</button></td>
             </tr>
         </tbody>
     </table>

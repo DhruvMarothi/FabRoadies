@@ -29,7 +29,7 @@ export class PaymentComponent implements OnInit {
       } 
    
       this.service.bookReservation(this.otp);
-      this.router.navigate(['mytrip']).then(()=>{location.reload()});
+      this.router.navigate(['home']).then(()=>{location.reload()});
     //  alert("Payment Successfully Completed");
     }
    

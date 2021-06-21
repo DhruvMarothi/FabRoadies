@@ -1,10 +1,132 @@
+<div class="bg" style="background-image: url(/assets/Images/4.png);">
+
+
+    <!--Signup Part-->
+
+    <div class="main container-fluid">
+        <div class="heading my-4">
+            <h2 class="fs-2"><b>Welcome to FabRoadies!!</b></h2>
+        </div>
+        <div class="login">
+            <div class="row">
+                <div class="col-5">
+                    <div class="container my-4">
+                        <div class="card">
+                            <img src="assets/Images/3.jpg" class="card-img-top">
+                            <div class="card-body">
+                                &nbsp;
+                                <h5 class="card-title fs-5"><b>Registered users get MORE!</b></h5>
+                                &nbsp;
+                                <ul class="list-group list-group-numbered card-text">
+                                    <li class="list-group-item">View/ Cancel Bookings</li>
+                                    <li class="list-group-item">Manage cancellations & print eTickets</li>
+                                    <li class="list-group-item">Book faster with Forms</li>
+                                    <li class="list-group-item">Book from the selection of buses, including AC, Non-AC,
+                                        Deluxe and more.</li>
+                                    <li class="list-group-item">Pay through cards, Net banking or mobile wallets for Bus
+                                        reservation</li>
+                                    <li class="list-group-item">We have tied up with best bus operators in India to make
+                                        travel easy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-7 my-4" style="padding-top: 30px;">
+                    <form (ngSubmit)="onSubmit()" #frm=ngForm>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label fs-6"><b>Card No.</b></label>
+                            <div class="col-sm-10">
+                                <input name="cardno" [(ngModel)]="user.cardNumber" type="number"
+                                    class="form-control rounded-pill border border-3 border-danger"
+                                    placeholder="Enter card no." #ucard=ngModel required pattern="[0-9]{16}">
+                                <div *ngIf="ucard.invalid && ucard.dirty" class="alert alert-warning" role="alert">
+                                    Enter valid card number
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label fs-6"><b>Name of cardholder</b></label>
+                            <div class="col-sm-10">
+                                <input name="name" [(ngModel)]="user.name" type="text"
+                                    class="form-control rounded-pill border border-3 border-danger"
+                                    placeholder="Your Full Name" #uname=ngModel required pattern="[A-Za-z]*{5,15}">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label fs-6"><b>CVV No</b></label>
+                            <div class="col-sm-10">
+                                <input name="cvv" [(ngModel)]="user.cvvNumber" type="password"
+                                    class="form-control rounded-pill border border-3 border-danger" #cvv=ngModel
+                                    maxlength='3' required pattern="[0-9]{3}">
+                                <div *ngIf="cvv.invalid && cvv.dirty" class="alert alert-warning" role="alert">
+                                    Enter valid CVV
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label fs-6"><b>Expiry Date</b></label>
+                            <div class="col-sm-10">
+                                <input name="date" [(ngModel)]="user.expiryDate" type="text"
+                                    class="form-control rounded-pill border border-3 border-danger" #exp=ngModel
+                                    placeholder="MM/YY" maxlength='5' required pattern="(?:0[1-9]|1[0-2])/[0-9]{2}">
+                                <div *ngIf="exp.invalid && exp.dirty" class="alert alert-warning" role="alert">
+                                    Enter valid Expiry Date
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="btn-group" role="group">
+                            <button type="button" [disabled]=!frm.valid class="btn btn-danger btn-lg"
+                                (click)="otpSend()" data-bs-toggle="modal" data-bs-target="#otp"
+                                data-bs-whatever="@mdo">Proceed To Pay</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal-->
+<div class="modal fade" id="otp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Enter the OTP</h2>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="col-form-label">OTP:</label>
+                        <input name="otps" type="text" class="form-control" [(ngModel)]="otp" required>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success" (click)="bookreq()">Submit</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!--Background-->
 
 
 <!--<div class="bg" style="background-image: url(/assets/Images/4.png);"> -->
 
-    <!--Payment Part--><!--
+<!--Payment Part-->
+<!--
     <div class="main container-fluid">
         <div class="heading my-4">
             <h2 class="fs-2"><b>Payment Method</b></h2>
@@ -96,119 +218,7 @@
     </div>
   </div> -->
 
-  <!--@author Sanchari-->
+<!--@author Sanchari-->
 <!--@User Signup Page-->
 
 <!--Background-->
-
-<div class="bg" style="background-image: url(/assets/Images/4.png);">
-
-
-    <!--Signup Part-->
-
-    <div class="main container-fluid">
-        <div class="heading my-4">
-            <h2 class="fs-2"><b>Welcome to FabRoadies!!</b></h2>
-        </div>
-        <div class="login">
-            <div class="row">
-                <div class="col-5">
-                    <div class="container my-4">
-                        <div class="card">
-                            <img src="assets/Images/3.jpg" class="card-img-top">
-                            <div class="card-body">
-                                &nbsp;
-                                <h5 class="card-title fs-5"><b>Registered users get MORE!</b></h5>
-                                &nbsp;
-                                <ul class="list-group list-group-numbered card-text">
-                                    <li class="list-group-item">View/ Cancel Bookings</li>
-                                    <li class="list-group-item">Manage cancellations & print eTickets</li>
-                                    <li class="list-group-item">Book faster with Forms</li>
-                                    <li class="list-group-item">Book from the selection of buses, including AC, Non-AC,
-                                        Deluxe and more.</li>
-                                    <li class="list-group-item">Pay through cards, Net banking or mobile wallets for Bus
-                                        reservation</li>
-                                    <li class="list-group-item">We have tied up with best bus operators in India to make
-                                        travel easy.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-7 my-4" style="padding-top: 30px;">
-                    <form (ngSubmit)="onSubmit()" #frm=ngForm>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label fs-6"><b>Card No.</b></label>
-                            <div class="col-sm-10">
-                                <input name="cardno" [(ngModel)]="user.cardNumber" type="number"
-                                    class="form-control rounded-pill border border-3 border-danger"
-                                    placeholder="Enter card no." #ucard=ngModel required pattern="[0-9]{10}">
-                                <div *ngIf="ucard.invalid && ucard.dirty" class="alert alert-warning" role="alert">
-                                    Enter valid card number
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label fs-6"><b>Name of cardholder</b></label>
-                            <div class="col-sm-10">
-                                <input name="name" [(ngModel)]="user.name" type="text"
-                                    class="form-control rounded-pill border border-3 border-danger"
-                                    placeholder="Your Full Name" #uname=ngModel required pattern="[A-Za-z]*{5,15}">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label fs-6"><b>CCV No</b></label>
-                            <div class="col-sm-10">
-                                <input name="ccv" [(ngModel)]="user.ccvNumber" type="number"
-                                    class="form-control rounded-pill border border-3 border-danger" #ccv=ngModel
-                                    required>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label fs-6"><b>Expiry Date</b></label>
-                            <div class="col-sm-10">
-                                <input name="date" [(ngModel)]="user.expiryDate" type="date"
-                                    class="form-control rounded-pill border border-3 border-danger" #exp=ngModel
-                                    required>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="btn-group" role="group">
-                            <button type="button" [disabled]=!frm.valid class="btn btn-danger btn-lg" (click)="otpSend()"    data-bs-toggle="modal" data-bs-target="#otp" data-bs-whatever="@mdo">Proceed To Pay</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--Modal-->
-<div class="modal fade" id="otp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLabel">Enter the OTP</h2>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label class="col-form-label">OTP:</label>
-              <input name="otps" type="text" class="form-control" [(ngModel)]="otp" required>
-            </div>
-            <div class="mb-3">
-              <button class="btn btn-success" (click)="bookreq()">Submit</button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
