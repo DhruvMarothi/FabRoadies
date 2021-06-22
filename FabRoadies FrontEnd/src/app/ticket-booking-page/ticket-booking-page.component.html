@@ -17,16 +17,16 @@
                     <p class="MLine"> All Buses include Safety as a Major Factor!!</p>
                 <div class="row mb-3 card card-body" id="Title"> <!--Headings Bar - Single Row-->
                     <div class="row">
-                        <div class="col-md-3 text-right"> <!--Heading Agency-->
+                        <div class="col-md-3 text-right fs-6"> <!--Heading Agency-->
                             <p> Bus Agency</p>
                         </div>
-                        <div class="col-md-3 text-right"> <!--Heading Depart-->
+                        <div class="col-md-3 text-right fs-6"> <!--Heading Depart-->
                             <p> Departure </p>
                         </div>
-                        <div class="col-md-3 text-right"> <!--Heading Arrival-->
+                        <div class="col-md-3 text-right fs-6"> <!--Heading Arrival-->
                             <p> Arrival </p>
                         </div>
-                        <div class="col-md-2 text-right"> <!--Heading Fare-->
+                        <div class="col-md-2 text-right fs-6"> <!--Heading Fare-->
                             <p> Fare </p>
                         </div>
                         <!-- <div class="col-md-1 text-right">
@@ -34,18 +34,18 @@
                         </div>  -->
                     </div>
                 </div>
-                <div class="row mb-3 card card-body" *ngFor="let b of buses">           <!--opening div for single card body *ngFor="let b of buses" to be added-->  
+                <div class="row mb-3 card card-body ds" *ngFor="let b of buses" >           <!--opening div for single card body *ngFor="let b of buses" to be added-->  
                     <div class=" row">                          <!--Row1 Card 1-->
-                        <div class="col-md-3 text-right">
+                        <div class="col-md-3 text-right fs-6">
                             <p>{{b.agency}}</p>        <!--Agency {{b.agency}}-->
                         </div>
-                        <div class="col-md-3 text-right ">
+                        <div class="col-md-3 text-right fs-6">
                             <p>{{b.departureCity}} </p>               <!--Departure Time {{b.departuretime}} -->
                         </div>
-                        <div class="col-md-3 text-right">
+                        <div class="col-md-3 text-right fs-6">
                             <p> <b>{{b.arrivalCity }}</b></p>                    <!--Arrival Time {{b.arrivaltime}} Not defined in backend yet--> 
                         </div>
-                        <div class="col-md-2 text-right">
+                        <div class="col-md-3 text-center fs-6">
                             <p>{{b.price | currency: "INR" : "symbol"}}</p>                 <!--Price {{b.price}}-->
                         </div>
                      <!--
@@ -55,11 +55,11 @@
                     -->
                     </div>
                     <div class="row">                           <!--Row 2 Card 1-->
-                        <div class="col-md-3 text-right">
+                        <div class="col-md-3 text-right fs-6">
                             <p>  {{b.busType}}</p>                 <!--Bustype {{b.busType}}-->
                         </div>
-                        <div class="col-md-3 text-right">
-                            <p>{{b.departuretime}}</p>             <!--Departure City {{b.departureCity}}-->
+                        <div class="col-md-3 text-right fs-6">
+                            <p><b>{{b.departuretime}}</b></p>             <!--Departure City {{b.departureCity}}-->
                         </div>
                        <!--<div class="col-md-3">
                             <p> {{b.arrivalCity}} </p>                Arrival City  {{b.Arrival}}

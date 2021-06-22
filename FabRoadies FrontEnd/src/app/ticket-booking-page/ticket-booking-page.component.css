@@ -3,7 +3,8 @@
 }
 
 .MLine{
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-weight: bold;
     font-size: 15px;
     color: green;
     /*background-color: aquamarine; */
@@ -21,4 +22,11 @@
 
 .row mb-3 card card-body {
     border-radius: .30rem;
+}
+
+.ds{
+    background: rgba(172, 255, 47, 0.692);
+}
+.ds:nth-child(even){
+    background: rgba(172, 255, 47, 0.253);
 }

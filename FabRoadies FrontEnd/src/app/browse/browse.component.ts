@@ -20,8 +20,8 @@ export class BrowseComponent implements OnInit {
   busq:Busquery=new Busquery();
   date: string = '';
   busl:BusAdmin[]=[];
-  destination : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bangalore","Delhi"];
-  source : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bangalore","Delhi"];
+  destination : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bengaluru","New Delhi"];
+  source : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bengaluru","New Delhi"];
 
   constructor(private service:AdminService,private router:Router) { }
 

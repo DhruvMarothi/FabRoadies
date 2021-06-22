@@ -13,9 +13,9 @@ export class UpdateComponent implements OnInit {
 
   addBus : BusAdmin = new BusAdmin();
 
-  source : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bangalore","Delhi"];
+  source : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bengaluru","New Delhi"];
 
-  destination : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bangalore","Delhi"]
+  destination : string[] = ["Kolkata","Chennai","Pune","Mumbai","Bengaluru","New Delhi"]
 
   busType:string[]=["AC","Non-AC"]
 
