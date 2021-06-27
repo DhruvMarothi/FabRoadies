@@ -2,6 +2,11 @@ package com.fabRoadies.dto;
 
 import java.time.LocalDate;
 
+/**
+ * For sending Tickets details to the user based on userId 
+ * @author Dhruv Marothi
+ *@version 1.0
+ */
 public class UserTickets {
 	public long ticketId;
 	public String busno;

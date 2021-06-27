@@ -1,6 +1,8 @@
 
 package com.fabRoadies.service;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -52,8 +54,9 @@ public class BusBookService {
 	private Random random = new Random();
 	private String id = String.format("%04d", random.nextInt(10000));
 	private String otpSent;
+	private String phoneNumber;
 
-	public Ticket bookBus(List<BookingRequest> reservationRequest) throws MessagingException {
+	public Ticket bookBus(List<BookingRequest> reservationRequest) throws MessagingException, MalformedURLException, IOException {
 
 		///////// Ticket add///////////
 		String busno = reservationRequest.get(0).getBusno();
@@ -68,6 +71,7 @@ public class BusBookService {
 		Bus bus = busOptional.get();
 		Optional<User> userOptional = userRepository.findById(userid);
 		User user = userOptional.get();
+		this.phoneNumber = user.getPhoneNumber();
 		Ticket reservation = new Ticket();
 		reservation.setBus(bus);
 		reservation.setUser(user);
@@ -95,7 +99,7 @@ public class BusBookService {
 
 		{
 			PdfGenerator.generateItenary(listOfPassenger,"C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"+"Passenger.pdf");
-		
+			
 			String s="C:\\Users\\ibmjfsdb209\\Desktop\\Pdf\\"+"Passenger.pdf";
 			service.sendEmailWithAttachment(reservationRequest.get(0).getEmail(),
 					"This is Email Body with Attachment",
@@ -115,7 +119,7 @@ public class BusBookService {
 	}
 	
 	public void otpSend(int uid) {
-		SendSms.sendsms("Your OTP no. is: "+ id, userRepository.findById(uid).get().getPhoneNumber());
+		SendSms.sendsms("Your OTP no. is: "+ id +" .DO NOT SHARE IT ANYONE ELSE",userRepository.findById(uid).get().getPhoneNumber());
 		this.otpSent=id;
 //		return this.id;
 	}

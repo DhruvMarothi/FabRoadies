@@ -1,10 +1,9 @@
 package com.fabRoadies.dto;
-
-
-
-
-
-
+/**
+ * Used for returning data to the user when login request is made
+ * @author Dhruv Marothi
+ * @version 1.0
+ */
 //@Entity
 public class LoginReturn {
 	
