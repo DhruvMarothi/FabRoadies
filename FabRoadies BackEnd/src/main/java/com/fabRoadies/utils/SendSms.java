@@ -8,6 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
+/**
+ * @author Pratik
+ * @version 1.0
+ */
 public class SendSms {
 
 	public static void sendsms(String message, String number) {

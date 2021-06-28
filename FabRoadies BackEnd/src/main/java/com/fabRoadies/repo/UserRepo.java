@@ -9,6 +9,10 @@ import org.springframework.data.jpa.repository.Query;
 import com.fabRoadies.entity.Bus;
 import com.fabRoadies.entity.User;
 
+/** 
+ * @author Shailendra 
+ * @version 1.0
+ */
 public interface UserRepo  extends JpaRepository<User, Integer>
 	{  
 	User findOneByEmail(String email);

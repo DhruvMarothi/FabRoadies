@@ -119,6 +119,7 @@ public class BusBookService {
 	}
 	
 	public void otpSend(int uid) {
+		System.out.println(id);
 		SendSms.sendsms("Your OTP no. is: "+ id +" .DO NOT SHARE IT ANYONE ELSE",userRepository.findById(uid).get().getPhoneNumber());
 		this.otpSent=id;
 //		return this.id;

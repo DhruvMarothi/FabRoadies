@@ -9,7 +9,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-
+/** 
+ * @author Pratik 
+ * @version 1.0
+ */
 @Entity
 @Table(name="roles")
 public class Roles {

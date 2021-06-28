@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/** 
+ * @author Dhruv Marothi 
+ * @version 1.0
+ */
 @Entity
 public class Busquery {
 	@Id

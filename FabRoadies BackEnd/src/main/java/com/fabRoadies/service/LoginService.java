@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 import com.fabRoadies.entity.User;
 import com.fabRoadies.repo.UserRepo;
 
+/** 
+ * @author Pratik 
+ * @version 1.0
+ */
 @Service
 public class LoginService {
 

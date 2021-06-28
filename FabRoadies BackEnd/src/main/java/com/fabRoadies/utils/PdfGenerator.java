@@ -23,7 +23,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
  
-
+/**
+ * @author Pratik
+ * @version 2.0
+ */
 @Component
 public class PdfGenerator {
 

@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fabRoadies.dto.BookingRequest;
 import com.fabRoadies.entity.Ticket;
+import com.fabRoadies.exceptions.BusNotFound;
+import com.fabRoadies.exceptions.UserNotFound;
+import com.fabRoadies.repo.BusRepository;
+import com.fabRoadies.repo.UserRepo;
 import com.fabRoadies.service.BusBookService;
 
 /**
@@ -28,6 +32,10 @@ import com.fabRoadies.service.BusBookService;
 public class BusBookController {
 	@Autowired
     private BusBookService reservationService;
+	@Autowired
+	private UserRepo uRepo;
+	@Autowired
+	private BusRepository bRepo;
 	
 //	For sending otp on user registered phone number.
 	@GetMapping(value= "/otpSend/{uid}")
@@ -38,8 +46,13 @@ public class BusBookController {
 // For validating the otp received from the user and completing the reservation process if validated successfully.
 	@RequestMapping(value = "/completeReservation/{otp}",method = RequestMethod.POST)
 	 public void completeReservation(@RequestBody List<BookingRequest> reservationRequest,@PathVariable("otp") int otp) throws MessagingException, MalformedURLException, IOException{		
-		if(reservationService.verification(otp))
+		if(uRepo.findById(reservationRequest.get(0).getUserid()).get() == null)
+			throw new UserNotFound("User Not Found");
+		else if(bRepo.findById(reservationRequest.get(0).getBusno()).get() == null)
+			throw new BusNotFound("Bus Not Found");
+		else {
+			if(reservationService.verification(otp))
 			reservationService.bookBus(reservationRequest);
-//        return null;
+		}
     }  
 }

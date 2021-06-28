@@ -10,7 +10,10 @@ import com.fabRoadies.repo.RollRepo;
 import com.fabRoadies.repo.UserRepo;
 
 
-
+/**
+ * @author Dhruv and Pratik and Shailendra
+ * @version 1.0
+ */
 @Service
 public class UserServiceImpl implements UserService {
 	
@@ -21,7 +24,6 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void addUser(User user,int roll) {
-		// TODO Auto-generated method stub
 		Roles rolls =getRoll(roll);
 		user.setRoll(rolls);
 	    repo.save(user);
@@ -31,29 +33,20 @@ public class UserServiceImpl implements UserService {
 	{
 		return rollrepo.findById(roll).get();
 	}
-
-	
-	
-	
 	
 	@Override
 	public List<User> getAllUser() {
-		// TODO Auto-generated method stub
 		return repo.findAll();
 	}
 
 	@Override
 	public User getByCode(int id) {
-		// TODO Auto-generated method stub
 		return repo.findById(id).get();
 	}
 
 	@Override
 	public void removeUser(int code) {
-		// TODO Auto-generated method stub
 		repo.deleteById(code);
-		
-		
 	}
 
 	@Override
@@ -74,16 +67,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int getUserIdByEmail(String email) {
 		return repo.findOneByEmail(email).getId();
-	}
-
-	
-	
-	
+	}	
 }
-
-
-
-
 
 
 

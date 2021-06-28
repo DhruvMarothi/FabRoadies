@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.fabRoadies.entity.User;
 
+/** 
+ * @author Pratik and Shailendra and Dhruv
+ * @version 1.0
+ */
 public interface UserService {
 
 	List<User> getAllUser();

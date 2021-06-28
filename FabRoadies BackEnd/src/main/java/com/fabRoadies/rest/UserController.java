@@ -17,7 +17,10 @@ import com.fabRoadies.service.UserService;
 import com.fabRoadies.utils.Emailsend;
 
 
-
+/** 
+ * @author Shailendra 
+ * @version 1.0
+ */
 @CrossOrigin
 @RestController  
 public class UserController 

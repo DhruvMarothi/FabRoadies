@@ -11,10 +11,12 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+/**
+ * @author Shailendra 
+ * @version 1.0
+ */
 @Entity
 public class Bus {
-
-
 
     @Id
     private String busno;
@@ -26,22 +28,10 @@ public class Bus {
 	private LocalDate dateOfDeparture;
 	private int price;
 	private int seats;
-//    private Date dateofDeparture;  
-    /////////////////////////
-//    @OneToMany(mappedBy="bus")
-//    private List<Ticket> tickets;
-    /////////////////////////
-    
-    //localtime(temporalValue)
-    //@Temporal(TemporalType.TIME)
-   // private LocalTime departuretime;
 	
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm", timezone = "UTC")
     @Temporal(TemporalType.TIME)
     private Date departuretime;
-    
-    
-    
     
 	public int getSeats() {
 		return seats;

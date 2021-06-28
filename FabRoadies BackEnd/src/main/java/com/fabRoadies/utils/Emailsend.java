@@ -15,6 +15,11 @@ import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
+
+/**
+ * @author Pratik
+ * @version 2.0
+ */
 @Service
 public class Emailsend {
 	@Autowired

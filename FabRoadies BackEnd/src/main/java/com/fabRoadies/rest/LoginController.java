@@ -12,7 +12,10 @@ import com.fabRoadies.dto.LoginReturn;
 import com.fabRoadies.entity.User;
 import com.fabRoadies.service.LoginService;
 
-
+/** 
+ * @author Pratik 
+ * @version 1.0
+ */
 @CrossOrigin
 @RestController  
 public class LoginController {
